@@ -1,0 +1,90 @@
+$xl-text: 4rem;
+$large-text: 2.5rem;
+$med-text: 1.5rem;
+
+@mixin primary-text {
+  font-family: 'Oswald', sans-serif;
+}
+
+@mixin secondary-text {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@mixin section-spacer {
+  margin: {
+    top: 2rem;
+  }
+  padding: {
+    top: 2rem;
+    bottom: 2rem;
+    left: 1rem;
+    right: 1rem;
+  }
+}
+
+.page {
+  background-color: #08AEEA;
+  background-image: -webkit-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
+  background-image: -moz-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
+  background-image: -o-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
+  background-image: linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
+
+  color: white;
+}
+
+.navigation {
+
+  &__box {
+    background-color: yellow;
+    opacity: .5;
+
+    position: fixed;
+    float: left;
+
+  }
+
+}
+
+.title {
+  padding: {
+    top: 5rem;
+    bottom: 3rem;
+  }
+  &__text {
+
+    &__main {
+      @include primary-text;
+      font: {
+        size: $xl-text;
+      }
+      color: white;
+
+    }
+    &__subtitle {
+      @include secondary-text;
+      font: {
+        size: $large-text;
+      }
+    }
+
+  }
+}
+
+.about {
+  @include section-spacer;
+  @include secondary-text;
+  font: {
+    size: $med-text;
+  }
+
+}
+
+.dcGov {
+  @include section-spacer
+
+  &__projects {
+    border:{
+
+    }
+  }
+}
