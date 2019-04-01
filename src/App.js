@@ -1,64 +1,62 @@
 import React, {Component} from 'react';
 import './App.scss';
+import {ParallaxProvider} from 'react-scroll-parallax'
 
 class App extends Component {
     render() {
         return (
-            <div className="page">
-                <div className="container">
+            <ParallaxProvider>
+                <div className="page">
+                    <div className="container">
 
-                    <div className="title">
-                        <div className="title__text row justify-content-center">
-                            <div className="title__text__main col-11 offset-1">
-                                David Chorvinsky
+                        <section className="title">
+                            <div className="title__text row justify-content-center">
+                                <div className="title__text__main col-11 offset-1">
+                                    David Chorvinsky
+                                </div>
+                                <div className="title__text__subtitle col-auto">
+                                    (shifting text here)
+                                </div>
                             </div>
-                            <div className="title__text__subtitle col-auto">
-                                (shifting text here)
+                        </section>
+
+                        <section className="row">
+                            <div className="about">
+                                With a deep passion for design and "creating" everything from web applications and
+                                virtual economy analyses to events or calligraphy I find myself always working on
+                                something.
+                                This mix of passions, both digital and physical, lead me to learn about many things and
+                                from
+                                many wonderful people. Through the osmosis of information from so many sources I found
+                                myself
+                                naturally drawn to the role of Product Manager for both my career and personal projects,
+                                working
+                                with teams and friends, to create things we can proud of.
                             </div>
+                        </section>
+
+                        <div className="projects">
+                            <div className="col-12">
+                                Between work and hope I tend to keep myself busy with more than a few projects.
+                            </div>
+                            <div className="projects__dcGov"></div>
+
+                            <div className="projects__spkez"></div>
+                            <div className="projects__bg"></div>
                         </div>
-                    </div>
 
-                    <div className="row about">
-                        With a deep passion for design and "creating" everything from web applications and
-                        virtual economy analyses to events or calligraphy I find myself always working on something.
-                        This mix of passions, both digital and physical, lead me to learn about many things and from
-                        many wonderful people. Through the osmosus of information from so many sources I found myself
-                        naturally drawn to the role of Product Manager for both my career and personal projects, working
-                        with teams and friends, to create things we can proud of.
-                    </div>
+                        <section className="row atc">
+                        </section>
 
-                    <div className="row dcGov">
-                        <div className="dcGov__description"></div>
-                        <div className="dcGov__projects">
-                            <div className="dcGov__projects__cards">data cards and crime cards</div>
-                            <div className="dcGov__projects__lake">data lake</div>
-                            <div className="dcGov__projects__etc">other projects</div>
-                        </div>
-                    </div>
+                        <section className="row undergrad">
+                        </section>
 
-                    <div className="row spkezTango">
-                        <div className="spkezTango__projects">
-                            <div className="spkezTango__projects__business">the business</div>
-                            <div className="spkezTango__projects__reg">reg system</div>
-                            <div className="spkezTango__projects__design">design work</div>
-                            <div className="spkezTango__projects__events">events</div>
-                        </div>
-                    </div>
+                        <section className="row dreamWizards">
+                        </section>
 
-                    <div className="row auctionBot">
                     </div>
-
-                    <div className="row atc">
-                    </div>
-
-                    <div className="row undergrad">
-                    </div>
-
-                    <div className="row dreamWizards">
-                    </div>
-
                 </div>
-            </div>
+            </ParallaxProvider>
         );
     }
 }

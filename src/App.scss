@@ -10,6 +10,16 @@ $med-text: 1.5rem;
   font-family: 'Montserrat', sans-serif;
 }
 
+@mixin section-gradient {
+  background-image: -webkit-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
+  background-image: -moz-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
+  background-image: -o-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
+  background-image: linear-gradient(32deg, #08AEEA 0%, #2af598 100%);
+
+  //background: rgb(25, 58, 237);
+  //background: linear-gradient(15deg, rgba(25, 58, 237, 1) 0%, rgba(14, 134, 235, 1) 23%, rgba(8, 172, 234, 1) 39%, rgba(0, 240, 89, 1) 100%);
+}
+
 @mixin section-spacer {
   margin: {
     top: 2rem;
@@ -22,13 +32,13 @@ $med-text: 1.5rem;
   }
 }
 
-.page {
-  background-color: #08AEEA;
-  background-image: -webkit-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
-  background-image: -moz-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
-  background-image: -o-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
-  background-image: linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
+section {
+}
 
+.page {
+  //background-color: #076991;
+  //background: rgb(102, 124, 238);
+  background: linear-gradient(311deg, rgba(102, 124, 238, 1) 0%, rgba(255, 175, 89, 1) 100%);
   color: white;
 }
 
@@ -50,6 +60,8 @@ $med-text: 1.5rem;
     top: 5rem;
     bottom: 3rem;
   }
+  text-shadow: 1px 1px 2px #285231;
+
   &__text {
 
     &__main {
@@ -76,14 +88,20 @@ $med-text: 1.5rem;
   font: {
     size: $med-text;
   }
-
+  border: {
+    width: 2px;
+    style: solid;
+    color: black;
+    radius: 2rem;
+  }
+  @include section-gradient
 }
 
 .dcGov {
-  @include section-spacer
+  //@include section-spacer
 
   &__projects {
-    border:{
+    border: {
 
     }
   }
