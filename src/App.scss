@@ -2,23 +2,75 @@ $xl-text: 4rem;
 $large-text: 2.5rem;
 $med-text: 1.5rem;
 
-@mixin primary-text {
+$serika-primary: #dad6c4;
+$serika-secondary: #464752;
+$serika-tertiary: #1c1f25;
+$serika-accent: #ffcd01;
+@mixin serika-gradient() {
+  background: rgb(218, 214, 196);
+  background: linear-gradient(164deg, rgba(218, 214, 196, 1) 0%, rgba(109, 110, 117, 1) 44%, rgba(28, 31, 37, 1) 86%);
+}
+
+@mixin serika-gradientV2() {
+  background: rgb(28, 31, 37);
+  background: linear-gradient(167deg, rgba(28, 31, 37, 1) 52%, rgba(70, 71, 82, 1) 52%);
+}
+
+$naut-primary: #f8cf41;
+$naut-secondary: #27416b;
+$naut-tertiary: #28314d;
+$naut-accent: #64f9f9;
+@mixin naut-gradient() {
+  background: rgb(21, 138, 138);
+  background: linear-gradient(191deg, rgba(21, 138, 138, 1) 0%, rgba(39, 65, 107, 1) 45%, rgba(40, 49, 77, 1) 75%);
+}
+
+$nightmare-primary: #1a574e;
+$nightmare-secondary: #1c3f3e;
+$nightmare-tertiary: #363533;
+$nightmare-accent: #4ac4a6;
+@mixin nightmare-gradient() {
+  background: rgb(26, 87, 78);
+  background: linear-gradient(167deg, rgba(26, 87, 78, 1) 0%, rgba(28, 63, 62, 1) 39%, rgba(54, 53, 51, 1) 73%);
+}
+
+//@mixin color-palette($palette-name) {
+//  @if $palette-name == serika {
+//    $primary: #dad6c4;
+//    $secondary: #4c4e58;
+//    $tertiary: #31343c;
+//    $accent: #ffcd01;
+//  } @else if $palette-name == nautilus {
+//    $primary: #f8cf41;
+//    $secondary: #27416b;
+//    $tertiary: #28314d;
+//    $accent: #64f9f9;
+//  } @else if $palette-name == naut-nightmare {
+//    $primary: #1a574e;
+//    $secondary: #1c3f3e;
+//    $tertiary: #363533;
+//    $accent: #4ac4a6;
+//  }
+//
+//}
+
+@mixin primary-text() {
   font-family: 'Oswald', sans-serif;
 }
 
-@mixin secondary-text {
+@mixin secondary-text() {
   font-family: 'Montserrat', sans-serif;
 }
 
-@mixin section-gradient {
-  background-image: -webkit-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
-  background-image: -moz-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
-  background-image: -o-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
-  background-image: linear-gradient(32deg, #08AEEA 0%, #2af598 100%);
+//@mixin section-gradient () {
+//  background-image: -webkit-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
+//  background-image: -moz-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
+//  background-image: -o-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
+//  background-image: linear-gradient(32deg, #08AEEA 0%, #2af598 100%);
 
-  //background: rgb(25, 58, 237);
-  //background: linear-gradient(15deg, rgba(25, 58, 237, 1) 0%, rgba(14, 134, 235, 1) 23%, rgba(8, 172, 234, 1) 39%, rgba(0, 240, 89, 1) 100%);
-}
+//background: rgb(25, 58, 237);
+//background: linear-gradient(15deg, rgba(25, 58, 237, 1) 0%, rgba(14, 134, 235, 1) 23%, rgba(8, 172, 234, 1) 39%, rgba(0, 240, 89, 1) 100%);
+//}
 
 @mixin section-spacer {
   margin: {
@@ -38,8 +90,8 @@ section {
 .page {
   //background-color: #076991;
   //background: rgb(102, 124, 238);
-  background: linear-gradient(311deg, rgba(102, 124, 238, 1) 0%, rgba(255, 175, 89, 1) 100%);
-  color: white;
+  //background: linear-gradient(311deg, rgba(102, 124, 238, 1) 0%, rgba(255, 175, 89, 1) 100%);
+  //color: white;
 }
 
 .navigation {
@@ -56,12 +108,12 @@ section {
 }
 
 .title {
+  height: 30rem;
   padding: {
     top: 5rem;
     bottom: 3rem;
   }
-  text-shadow: 1px 1px 2px #285231;
-
+  background-color: $serika-secondary;
   &__text {
 
     &__main {
@@ -69,7 +121,7 @@ section {
       font: {
         size: $xl-text;
       }
-      color: white;
+      color: $serika-primary;
 
     }
     &__subtitle {
@@ -77,8 +129,13 @@ section {
       font: {
         size: $large-text;
       }
+      color: $serika-primary
     }
 
+  }
+
+  &__arrow {
+    color: $serika-accent
   }
 }
 
@@ -94,7 +151,6 @@ section {
     color: black;
     radius: 2rem;
   }
-  @include section-gradient
 }
 
 .dcGov {
