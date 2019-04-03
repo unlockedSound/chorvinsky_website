@@ -8,16 +8,18 @@ class App extends Component {
             <div className="page">
 
                 <section className="title">
-                    <div className="title__text row justify-content-center">
-                        <div className="title__text__main col-11 offset-1">
-                            David Chorvinsky
+                    <div className="container justify-content-center">
+                        <div className="title__text">
+                            <div className="title__text__main col-11 offset-1">
+                                David Chorvinsky
+                            </div>
+                            <div className="title__text__subtitle col-auto">
+                                (shifting text here)
+                            </div>
                         </div>
-                        <div className="title__text__subtitle col-auto">
-                            (shifting text here)
-                        </div>
+                        <i className="fas fa-angle-down title__arrow"></i>
+                        <i className="fas fa-angle-down title__arrow"></i>
                     </div>
-                    <i className="fas fa-angle-down title__arrow"></i>
-                    <i className="fas fa-angle-down title__arrow"></i>
                 </section>
 
                 <section className="row">
