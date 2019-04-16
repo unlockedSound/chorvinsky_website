@@ -1,28 +1,50 @@
 $xl-text: 4rem;
 $large-text: 2.5rem;
 $med-text: 1.5rem;
+$sm-ish-text: 1.25rem;
+$xs-text: .75rem;
 
 $serika-primary: #dad6c4;
 $serika-secondary: #464752;
 $serika-tertiary: #1c1f25;
 $serika-accent: #ffcd01;
-@mixin serika-gradient() {
-  background: rgb(218, 214, 196);
-  background: linear-gradient(164deg, rgba(218, 214, 196, 1) 0%, rgba(109, 110, 117, 1) 44%, rgba(28, 31, 37, 1) 86%);
+//@mixin serika-gradient() {
+//  background: rgb(218, 214, 196);
+//  background: linear-gradient(164deg, rgba(218, 214, 196, 1) 0%, rgba(109, 110, 117, 1) 44%, rgba(28, 31, 37, 1) 86%);
+//}
+
+//todo: to better handle this I need to figure out how to make a callable background that has the gradient fill the center (25-75) with an extension of top color (0-25) and bottom color (75-100)
+@mixin serika-gradientV2--internal() {
+  background: rgb(28, 31, 37);
+  background: linear-gradient(155deg, rgba(28, 31, 37, 1) 52%, rgba(70, 71, 82, 1) 52%);
+  min-height: 500px;
 }
 
-@mixin serika-gradientV2() {
+@mixin serika-gradientV2--external() {
   background: rgb(28, 31, 37);
-  background: linear-gradient(167deg, rgba(28, 31, 37, 1) 52%, rgba(70, 71, 82, 1) 52%);
+  background: linear-gradient(180deg, rgba(28, 31, 37, 1) 52%, rgba(70, 71, 82, 1) 52%);
+  min-height: 500px;
 }
 
 $naut-primary: #f8cf41;
 $naut-secondary: #27416b;
 $naut-tertiary: #28314d;
 $naut-accent: #64f9f9;
-@mixin naut-gradient() {
-  background: rgb(21, 138, 138);
-  background: linear-gradient(191deg, rgba(21, 138, 138, 1) 0%, rgba(39, 65, 107, 1) 45%, rgba(40, 49, 77, 1) 75%);
+//@mixin naut-gradient() {
+//  background: rgb(21, 138, 138);
+//  background: linear-gradient(191deg, rgba(21, 138, 138, 1) 0%, rgba(39, 65, 107, 1) 45%, rgba(40, 49, 77, 1) 75%);
+
+
+@mixin naut__gradientV2--internal() {
+  background: $naut-tertiary;
+  background: linear-gradient(205deg, $naut-tertiary 52%, $naut-secondary 52%);
+  //todo: make it a calc on a query for width? is that possible to do inline? otherwise test at media breakpoints and set it for each... we just have to use more dynamic methodologies for these sort of things
+  min-height: 500px;
+}
+
+@mixin naut__gradientV2--external() {
+  background: $naut-tertiary;
+  background: linear-gradient(180deg, $naut-tertiary 52%, $naut-secondary 52%);
 }
 
 $nightmare-primary: #1a574e;
@@ -33,6 +55,7 @@ $nightmare-accent: #4ac4a6;
   background: rgb(26, 87, 78);
   background: linear-gradient(167deg, rgba(26, 87, 78, 1) 0%, rgba(28, 63, 62, 1) 39%, rgba(54, 53, 51, 1) 73%);
 }
+
 
 //@mixin color-palette($palette-name) {
 //  @if $palette-name == serika {
@@ -72,15 +95,47 @@ $nightmare-accent: #4ac4a6;
 //background: linear-gradient(15deg, rgba(25, 58, 237, 1) 0%, rgba(14, 134, 235, 1) 23%, rgba(8, 172, 234, 1) 39%, rgba(0, 240, 89, 1) 100%);
 //}
 
-@mixin section-spacer {
-  margin: {
-    top: 2rem;
+@mixin section-spacer($first-bottom-other) {
+  @if $first-bottom-other == first {
+    padding: {
+      top: 7.5rem;
+      bottom: 5rem;
+    }
+
+  } @else if $first-bottom-other == bottom {
+    padding: {
+      top: 5rem;
+      bottom: 5rem;
+    }
+  } @else {
+    padding: {
+      top: 5rem;
+      bottom: 7.5rem;
+    }
   }
-  padding: {
-    top: 2rem;
-    bottom: 2rem;
-    left: 1rem;
-    right: 1rem;
+}
+
+@mixin next-section-text($color, $arrow-position) {
+  color: $color;
+  text-align: center;
+  //todo: add a transform of position to get these nicely placed (want them at like 75% down the sections total height I think?
+  //todo: change the margining to golden ratio
+  @if $arrow-position == first-arrow {
+    margin: {
+      bottom: 1.5rem;
+    }
+    font-size: 2rem;
+  } @else if $arrow-position == second-arrow {
+    margin: {
+      bottom: 1.25rem;
+    }
+    font-size: 1.5rem;
+  } @else {
+    font-size: 1rem;
+    padding: {
+      bottom: 3rem;
+
+    }
   }
 }
 
@@ -108,13 +163,20 @@ section {
 }
 
 .title {
-  height: 30rem;
-  padding: {
-    top: 5rem;
-    bottom: 3rem;
+  @include serika-gradientV2--external();
+  @include section-spacer(first);
+
+  &__inside {
+    @include serika-gradientV2--internal();
+    min-width: 100%;
   }
-  background-color: $serika-secondary;
+
   &__text {
+    text-align: center;
+    margin: {
+      //-5 on small -2 on larger?
+      top: -2rem;
+    }
 
     &__main {
       @include primary-text;
@@ -122,34 +184,67 @@ section {
         size: $xl-text;
       }
       color: $serika-primary;
+      padding: {
+        bottom: 2rem;
+      }
 
     }
+
     &__subtitle {
       @include secondary-text;
       font: {
         size: $large-text;
       }
-      color: $serika-primary
+      color: $serika-primary;
     }
 
   }
 
+  //TODO: replace these with FUCKING ARROWS!
   &__arrow {
-    color: $serika-accent
+    color: $serika-accent;
+    text-align: center;
+    margin: {
+      top: 5rem;
+    }
+
+    //TODO: add some animation to this... like fade each in then back out to draw eye down
+    &--large {
+      @include next-section-text($serika-accent, first-arrow);
+    }
+
+    &--medium {
+      @include next-section-text($serika-accent, second-arrow);
+    }
+
+    &--small {
+      @include next-section-text($serika-accent, third-arrow);
+    }
+
   }
 }
 
 .about {
-  @include section-spacer;
-  @include secondary-text;
+  @include section-spacer(other);
+  @include secondary-text();
+  @include naut__gradientV2--external();
   font: {
     size: $med-text;
   }
-  border: {
-    width: 2px;
-    style: solid;
-    color: black;
-    radius: 2rem;
+  color: $naut-primary;
+
+  &__inside {
+    @include naut__gradientV2--internal();
+    min-width: 100%
+  }
+
+  &__title {
+    color: $naut-accent;
+    font-size: $med-text
+  }
+
+  &__text {
+    color: $naut-primary;
   }
 }
 
