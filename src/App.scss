@@ -4,83 +4,62 @@ $med-text: 1.5rem;
 $sm-ish-text: 1.25rem;
 $xs-text: .75rem;
 
-$serika-primary: #dad6c4;
-$serika-secondary: #464752;
-$serika-tertiary: #1c1f25;
-$serika-accent: #ffcd01;
-//@mixin serika-gradient() {
-//  background: rgb(218, 214, 196);
-//  background: linear-gradient(164deg, rgba(218, 214, 196, 1) 0%, rgba(109, 110, 117, 1) 44%, rgba(28, 31, 37, 1) 86%);
-//}
+$serika-primary:   #ffcd01;
+$serika-secondary: #dad6c4;
+$serika-tertiary:  #464752;
+$serika-accent:    #1c1f25;
 
 //todo: to better handle this I need to figure out how to make a callable background that has the gradient fill the center (25-75) with an extension of top color (0-25) and bottom color (75-100)
-@mixin serika-gradientV2--internal() {
+@mixin serika-gradient--internal() {
   background: rgb(28, 31, 37);
-  background: linear-gradient(155deg, rgba(28, 31, 37, 1) 52%, rgba(70, 71, 82, 1) 52%);
+  background: linear-gradient(155deg, $serika-tertiary 52%, $serika-secondary 52%);
 }
 
-@mixin serika-gradientV2--external() {
+@mixin serika-gradient--external() {
   background: rgb(28, 31, 37);
-  background: linear-gradient(180deg, rgba(28, 31, 37, 1) 52%, rgba(70, 71, 82, 1) 52%);
+  background: linear-gradient(180deg, $serika-tertiary 52%, $serika-secondary 52%);
 }
 
-$naut-primary: #f8cf41;
+$naut-primary:   #f8cf41;
 $naut-secondary: #27416b;
-$naut-tertiary: #28314d;
-$naut-accent: #64f9f9;
-//@mixin naut-gradient() {
-//  background: rgb(21, 138, 138);
-//  background: linear-gradient(191deg, rgba(21, 138, 138, 1) 0%, rgba(39, 65, 107, 1) 45%, rgba(40, 49, 77, 1) 75%);
+$naut-tertiary:  #28314d;
+$naut-accent:    #64f9f9;
 
-@mixin naut__gradientV2--internal() {
+@mixin naut__gradient--internal() {
   background: $naut-tertiary;
   background: linear-gradient(205deg, $naut-tertiary 52%, $naut-secondary 52%);
   //todo: make it a calc on a query for width? is that possible to do inline? otherwise test at media breakpoints and set it for each... we just have to use more dynamic methodologies for these sort of things
 }
 
-@mixin naut__gradientV2--external() {
+@mixin naut__gradient--external() {
   background: $naut-tertiary;
   background: linear-gradient(180deg, $naut-tertiary 52%, $naut-secondary 52%);
 }
 
-$nightmare-primary: #4ac4a6;
-$nightmare-secondary: #1c3f3e;
-$nightmare-tertiary: #363533;
-$nightmare-accent: #1a574e;
-@mixin nightmare-gradient() {
-  background: rgb(26, 87, 78);
-  background: linear-gradient(167deg, rgba(26, 87, 78, 1) 0%, rgba(28, 63, 62, 1) 39%, rgba(54, 53, 51, 1) 73%);
-}
+//$nightmare-primary:   #009680;
+//$nightmare-secondary: #052d28;
+//$nightmare-tertiary:  #323130;
+//$nightmare-accent:    #00c2a3;
+
+$nightmare-tertiary:   #009680;
+$nightmare-primary: #052d28;
+$nightmare-accent:  #323130;
+$nightmare-secondary:    #00c2a3;
+
+//@mixin nightmare-gradient() {
+//  //background: rgb(26, 87, 78);
+//  background: linear-gradient(167deg, rgba(26, 87, 78, 1) 0%, rgba(28, 63, 62, 1) 39%, rgba(54, 53, 51, 1) 73%);
+//}
 
 @mixin nightmare__gradientV2--internal() {
-  background: $naut-tertiary;
+  //background: $naut-tertiary;
   background: linear-gradient(205deg, $nightmare-tertiary 52%, $nightmare-secondary 52%);
 }
 
 @mixin nightmare__gradientV2--external() {
-  background: $naut-tertiary;
+  //background: $naut-tertiary;
   background: linear-gradient(180deg, $nightmare-tertiary 52%, $nightmare-secondary 52%);
 }
-
-//@mixin color-palette($palette-name) {
-//  @if $palette-name == serika {
-//    $primary: #dad6c4;
-//    $secondary: #4c4e58;
-//    $tertiary: #31343c;
-//    $accent: #ffcd01;
-//  } @else if $palette-name == nautilus {
-//    $primary: #f8cf41;
-//    $secondary: #27416b;
-//    $tertiary: #28314d;
-//    $accent: #64f9f9;
-//  } @else if $palette-name == naut-nightmare {
-//    $primary: #1a574e;
-//    $secondary: #1c3f3e;
-//    $tertiary: #363533;
-//    $accent: #4ac4a6;
-//  }
-//
-//}
 
 @mixin primary-text() {
   font-family: 'Oswald', sans-serif;
@@ -90,16 +69,6 @@ $nightmare-accent: #1a574e;
   font-family: 'Montserrat', sans-serif;
 }
 
-//@mixin section-gradient () {
-//  background-image: -webkit-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
-//  background-image: -moz-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
-//  background-image: -o-linear-gradient(32deg, #08AEEA 0%, #2AF598 100%);
-//  background-image: linear-gradient(32deg, #08AEEA 0%, #2af598 100%);
-
-//background: rgb(25, 58, 237);
-//background: linear-gradient(15deg, rgba(25, 58, 237, 1) 0%, rgba(14, 134, 235, 1) 23%, rgba(8, 172, 234, 1) 39%, rgba(0, 240, 89, 1) 100%);
-//}
-
 @mixin section-spacer($first-bottom-other) {
   @if $first-bottom-other == first {
     padding: {
@@ -107,7 +76,7 @@ $nightmare-accent: #1a574e;
       bottom: 5rem;
     }
 
-  } @else if $first-bottom-other == bottom {
+  } @else if $first-bottom-other == other {
     padding: {
       top: 5rem;
       bottom: 5rem;
@@ -120,8 +89,8 @@ $nightmare-accent: #1a574e;
   }
 }
 
-@mixin next-section-text($color, $arrow-position) {
-  color: $color;
+@mixin next-section-text($arrow-position) {
+  color: $serika-accent;
   text-align: center;
   //todo: add a transform of position to get these nicely placed (want them at like 75% down the sections total height I think?
   //todo: change the margining to golden ratio
@@ -144,15 +113,15 @@ $nightmare-accent: #1a574e;
   }
 }
 
-@mixin inside-height() {
+@mixin inside-section() {
   min-width: 100%;
   min-height: 600px;
 
-//@media (min-width: 576px) {
-//    min-height: 700px;
-//  }
+  //@media (min-width: 576px) {
+  //    min-height: 700px;
+  //  }
 
- @media (min-width: 768px) {
+  @media (min-width: 768px) {
     min-height: 700px;
   }
 
@@ -167,9 +136,6 @@ $nightmare-accent: #1a574e;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-section {
 }
 
 .page {
@@ -193,20 +159,17 @@ section {
 }
 
 .header {
-  @include serika-gradientV2--external();
+  @include serika-gradient--external();
   @include section-spacer(first);
 
   &__inside {
-    @include serika-gradientV2--internal();
-    @include inside-height();
+    @include serika-gradient--internal();
+    @include inside-section();
   }
 
   &__text {
     text-align: center;
-    margin: {
-      //-5 on small -2 on larger?
-      //top: -2rem;
-    }
+    mix-blend-mode: hard-light;
 
     &__main {
       @include primary-text;
@@ -237,18 +200,19 @@ section {
     margin: {
       top: 30%;
     }
+    mix-blend-mode: multiply;
 
     //TODO: add some animation to this... like fade each in then back out to draw eye down
     &--large {
-      @include next-section-text($serika-accent, first-arrow);
+      @include next-section-text(first-arrow);
     }
 
     &--medium {
-      @include next-section-text($serika-accent, second-arrow);
+      @include next-section-text(second-arrow);
     }
 
     &--small {
-      @include next-section-text($serika-accent, third-arrow);
+      @include next-section-text(third-arrow);
     }
 
   }
@@ -257,28 +221,33 @@ section {
 .about {
   @include section-spacer(other);
   @include secondary-text();
-  @include naut__gradientV2--external();
+  @include naut__gradient--external();
   font: {
     size: $med-text;
   }
   color: $naut-primary;
 
   &__inside {
-    @include naut__gradientV2--internal();
-    @include inside-height();
+    @include naut__gradient--internal();
+    @include inside-section();
   }
 
   &__title {
     color: $naut-primary;
-    font-size: $large-text;
-    font-weight: bold;
+    font: {
+      size: $large-text;
+      weight: bold;
+    }
+    mix-blend-mode: hard-light;
+
   }
 
   &__text {
     color: $naut-primary;
-    padding:{
+    padding: {
       bottom: 2rem;
     }
+    mix-blend-mode: hard-light;
 
     &--extra {
       color: $naut-accent;
@@ -286,10 +255,10 @@ section {
 
     &__special {
       padding: {
-        top:1rem;
+        top: 1rem;
       }
       color: $naut-accent;
-      font:{
+      font: {
         size: $xs-text;
         style: italic;
       }
@@ -301,29 +270,40 @@ section {
 }
 
 .projects {
-    @include section-spacer(last);
+  @include section-spacer(last);
   @include secondary-text();
   @include nightmare__gradientV2--external();
 
-  &__inside{
+  &__inside {
     @include nightmare__gradientV2--internal();
-    @include inside-height();
+    @include inside-section();
   }
 
-  &__title{
-    font:{
+  &__title {
+    font: {
       size: $large-text;
       weight: bold;
     }
-    color: $nightmare-primary;
+    color: $nightmare-accent;
+    mix-blend-mode: hard-light;
   }
 
-  &__text{
+  &__text {
     color: $nightmare-primary;
+    //color: white;
+    padding: {
+      bottom: 2rem;
+    }
+    mix-blend-mode: hard-light;
 
-    &--italics{
+    &--italics {
       font-style: italic;
     }
+
+    &__list {
+      color: $nightmare-primary;
+    }
+
   }
 
 }

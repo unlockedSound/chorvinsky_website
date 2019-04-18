@@ -72,14 +72,14 @@ class App extends Component {
                             </div>
 
                             <div className="projects__title">
-                                SpkEz Tango: Littl'easies, Big'easies, and everything else
+                                SpkEz Tango
                             </div>
                             <div className="projects__text">
                                 The core purpose of Speakeasy Tango are our events. From small recurring events hidden
                                 in an apartment in D.C., to day long <span
-                                className="projects__text--italics">minithons,</span> or eventually full on tango
-                                marathons and festivals. We aim to create events that meet certain criteria:
-                                <ul>
+                                className="projects__text--italics">minithons,</span> full on
+                                marathons, and festivals. We aim to create events that meet certain criteria:
+                                <ul className="projects__text__list">
                                     <li>
                                         They work, where they are and when they are
                                     </li>
@@ -92,11 +92,15 @@ class App extends Component {
                                     <li>
                                         Good, plain and simple
                                     </li>
-
                                 </ul>
                             </div>
 
+                            <div className="projects__title">
+
+                            </div>
+
                         </div>
+
                     </div>
                 </section>
 
