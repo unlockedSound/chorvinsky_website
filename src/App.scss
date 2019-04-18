@@ -17,13 +17,11 @@ $serika-accent: #ffcd01;
 @mixin serika-gradientV2--internal() {
   background: rgb(28, 31, 37);
   background: linear-gradient(155deg, rgba(28, 31, 37, 1) 52%, rgba(70, 71, 82, 1) 52%);
-  min-height: 500px;
 }
 
 @mixin serika-gradientV2--external() {
   background: rgb(28, 31, 37);
   background: linear-gradient(180deg, rgba(28, 31, 37, 1) 52%, rgba(70, 71, 82, 1) 52%);
-  min-height: 500px;
 }
 
 $naut-primary: #f8cf41;
@@ -34,12 +32,10 @@ $naut-accent: #64f9f9;
 //  background: rgb(21, 138, 138);
 //  background: linear-gradient(191deg, rgba(21, 138, 138, 1) 0%, rgba(39, 65, 107, 1) 45%, rgba(40, 49, 77, 1) 75%);
 
-
 @mixin naut__gradientV2--internal() {
   background: $naut-tertiary;
   background: linear-gradient(205deg, $naut-tertiary 52%, $naut-secondary 52%);
   //todo: make it a calc on a query for width? is that possible to do inline? otherwise test at media breakpoints and set it for each... we just have to use more dynamic methodologies for these sort of things
-  min-height: 500px;
 }
 
 @mixin naut__gradientV2--external() {
@@ -47,15 +43,24 @@ $naut-accent: #64f9f9;
   background: linear-gradient(180deg, $naut-tertiary 52%, $naut-secondary 52%);
 }
 
-$nightmare-primary: #1a574e;
+$nightmare-primary: #4ac4a6;
 $nightmare-secondary: #1c3f3e;
 $nightmare-tertiary: #363533;
-$nightmare-accent: #4ac4a6;
+$nightmare-accent: #1a574e;
 @mixin nightmare-gradient() {
   background: rgb(26, 87, 78);
   background: linear-gradient(167deg, rgba(26, 87, 78, 1) 0%, rgba(28, 63, 62, 1) 39%, rgba(54, 53, 51, 1) 73%);
 }
 
+@mixin nightmare__gradientV2--internal() {
+  background: $naut-tertiary;
+  background: linear-gradient(205deg, $nightmare-tertiary 52%, $nightmare-secondary 52%);
+}
+
+@mixin nightmare__gradientV2--external() {
+  background: $naut-tertiary;
+  background: linear-gradient(180deg, $nightmare-tertiary 52%, $nightmare-secondary 52%);
+}
 
 //@mixin color-palette($palette-name) {
 //  @if $palette-name == serika {
@@ -139,6 +144,31 @@ $nightmare-accent: #4ac4a6;
   }
 }
 
+@mixin inside-height() {
+  min-width: 100%;
+  min-height: 600px;
+
+//@media (min-width: 576px) {
+//    min-height: 700px;
+//  }
+
+ @media (min-width: 768px) {
+    min-height: 700px;
+  }
+
+  @media (min-width: 992px) {
+    min-height: 750px;
+  }
+
+  @media (min-width: 1200px) {
+    min-height: 1000px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 section {
 }
 
@@ -162,20 +192,20 @@ section {
 
 }
 
-.title {
+.header {
   @include serika-gradientV2--external();
   @include section-spacer(first);
 
   &__inside {
     @include serika-gradientV2--internal();
-    min-width: 100%;
+    @include inside-height();
   }
 
   &__text {
     text-align: center;
     margin: {
       //-5 on small -2 on larger?
-      top: -2rem;
+      //top: -2rem;
     }
 
     &__main {
@@ -205,7 +235,7 @@ section {
     color: $serika-accent;
     text-align: center;
     margin: {
-      top: 5rem;
+      top: 30%;
     }
 
     //TODO: add some animation to this... like fade each in then back out to draw eye down
@@ -235,25 +265,65 @@ section {
 
   &__inside {
     @include naut__gradientV2--internal();
-    min-width: 100%
+    @include inside-height();
   }
 
   &__title {
-    color: $naut-accent;
-    font-size: $med-text
+    color: $naut-primary;
+    font-size: $large-text;
+    font-weight: bold;
   }
 
   &__text {
     color: $naut-primary;
-  }
-}
+    padding:{
+      bottom: 2rem;
+    }
 
-.dcGov {
-  //@include section-spacer
+    &--extra {
+      color: $naut-accent;
+    }
 
-  &__projects {
-    border: {
+    &__special {
+      padding: {
+        top:1rem;
+      }
+      color: $naut-accent;
+      font:{
+        size: $xs-text;
+        style: italic;
+      }
 
     }
+
   }
+
+}
+
+.projects {
+    @include section-spacer(last);
+  @include secondary-text();
+  @include nightmare__gradientV2--external();
+
+  &__inside{
+    @include nightmare__gradientV2--internal();
+    @include inside-height();
+  }
+
+  &__title{
+    font:{
+      size: $large-text;
+      weight: bold;
+    }
+    color: $nightmare-primary;
+  }
+
+  &__text{
+    color: $nightmare-primary;
+
+    &--italics{
+      font-style: italic;
+    }
+  }
+
 }
