@@ -318,6 +318,7 @@ $nightmare-secondary: #009680;
         background: linear-gradient(to left, $naut-accent, $naut-primary);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        white-space: nowrap;
         border-bottom: 1px solid $naut-primary;
 
         &:hover {
