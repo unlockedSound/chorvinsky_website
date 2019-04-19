@@ -41,9 +41,9 @@ $naut-accent: #64f9f9;
 //$nightmare-tertiary:  #323130;
 //$nightmare-accent:    #00c2a3;
 
-$nightmare-tertiary: #00c2a3;
+$nightmare-tertiary: #40CAA7;
 $nightmare-primary: #052d28;
-$nightmare-accent: #323130;
+$nightmare-accent: #55E1BD;
 $nightmare-secondary: #009680;
 
 @mixin nightmare__gradient--internal() {
@@ -111,8 +111,8 @@ $nightmare-secondary: #009680;
   justify-content: center;
 }
 
-@mixin content-spacer{
-  padding:{
+@mixin content-spacer {
+  padding: {
     top: 2rem;
   }
 }
@@ -260,8 +260,15 @@ $nightmare-secondary: #009680;
   &__content {
     @include content-spacer;
 
+    &__opener {
+      color: $nightmare-primary;
+      font-size: $med-text;
+
+    }
+
     &__title {
-      @include title-style($nightmare-primary, $large-text);
+      @include title-style($nightmare-accent, $large-text);
+      text-shadow: 2px 2px 2px $nightmare-secondary;
     }
 
     &__text {
@@ -284,8 +291,8 @@ $nightmare-secondary: #009680;
 
 }
 
-.projects {
-  @include section-spacer(last);
+.personal {
+  @include section-spacer(other);
   @include secondary-text();
   @include background-gradient($horizontal, $naut-tertiary, $naut-secondary);
 
@@ -295,6 +302,15 @@ $nightmare-secondary: #009680;
   }
   &__content {
     @include content-spacer;
+
+    &__section {
+      color: #4e8de1;
+      font-size: $med-text;
+    }
+
+    &__opener {
+      @include text-style($naut-primary, $med-text);
+    }
 
     &__title {
       @include title-style($naut-accent, $large-text);
@@ -312,6 +328,7 @@ $nightmare-secondary: #009680;
         font: {
           size: initial;
         }
+
       }
 
       &--link {
@@ -331,3 +348,101 @@ $nightmare-secondary: #009680;
 
 }
 
+.projects {
+  @include section-spacer(other);
+  @include secondary-text();
+  @include background-gradient($horizontal, $serika-secondary, $serika-tertiary);
+
+  &__inside {
+    @include background-gradient($left-to-right, $serika-secondary, $serika-tertiary);
+    @include inside-section();
+  }
+  &__content {
+    @include content-spacer;
+    text-shadow: 1px 1px 1px $serika-tertiary;
+
+    &__opener {
+      @include text-style($serika-primary, $med-text);
+    }
+
+    &__work {
+      @include title-style($serika-accent, $large-text);
+
+      &--link {
+        background: linear-gradient($right-to-left, $serika-primary, $serika-secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border-bottom: 1px solid $serika-primary;
+        text-shadow: none;
+
+        &:hover {
+          border-bottom: 1px solid $serika-secondary;
+          text-decoration: none;
+        }
+      }
+
+    }
+
+    &__skill {
+      @include text-style($serika-primary, $sm-ish-text);
+      padding-bottom: 0;
+
+      &__list {
+
+      }
+
+      &--link {
+        background: linear-gradient(to left, $serika-primary, $serika-secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border-bottom: 1px solid $serika-primary;
+
+        &:hover {
+          border-bottom: 1px solid $serika-secondary;
+        }
+
+      }
+    }
+  }
+}
+
+.contact {
+  @include section-spacer(last);
+  @include secondary-text();
+  @include background-gradient($horizontal, $naut-tertiary, $naut-secondary);
+
+  &__inside {
+    @include background-gradient($right-to-left, $naut-tertiary, $naut-secondary);
+    @include inside-section();
+  }
+
+  &__content {
+    @include content-spacer;
+
+    &__hire {
+      color: $nightmare-primary;
+      font-size: $sm-ish-text;
+
+      &--link{
+        background: linear-gradient(to left, $nightmare-accent, $nightmare-secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        white-space: nowrap;
+        border-bottom: 1px solid $naut-primary;
+      }
+
+    }
+
+    &__follow {
+      @include text-style($nightmare-primary, $med-text);
+      @include extra-text;
+    }
+
+    &__connect {
+      @include text-style($nightmare-primary, $med-text);
+      @include extra-text;
+    }
+
+  }
+
+}

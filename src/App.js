@@ -32,12 +32,15 @@ class App extends Component {
                 <section className="about">
                     <div className="about__inside container-fluid">
                         <div className="container justify-content-center about__content">
+                            <div className="about__content__opener">
+                                What I Do:
+                            </div>
                             <div className="about__content__title">
                                 Day Job:
                             </div>
                             <div className="about__content__text">
-                                Product Managemener
-                                <span className="about__text--extra"> *</span>
+                                Product Manager
+                                <span className="about__content__text--extra"> *</span>
                             </div>
                             <div className="about__content__title">
                                 After Hours:
@@ -53,34 +56,39 @@ class App extends Component {
                             </div>
                             <div className="about__content__text__special about__content__text__special--extra">
                                 *&#8230;with title of UI/UX and Front End Web Developer who does everything from
-                                initial wire frames, user testing, and building applications to defining specification, managing issue boards, and .
+                                initial wire frames, user testing, and building applications to defining specification,
+                                managing issue boards, and .
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section className="projects">
-                    <div className="projects__inside container-fluid">
-                        <div className="projects__content container justify-content-center">
-                            <div className="projects__content__title">
+                <section className="personal">
+                    <div className="personal__inside container-fluid">
+                        <div className="personal__content container justify-content-center">
+                            <div className="personal__content__opener">
+                                Personal projects capture creative energy to build solutions. Below are a few of my
+                                active projects:
+                            </div>
+                            <div className="personal__content__title">
                                 Speakeasy Registration
                             </div>
-                            <div className="projects__content__text">
+                            <div className="personal__content__text">
                                 Making up half of Speakeasy Tango's business, this custom registration system is
                                 designed to
                                 effortless handle role balancing and schedule creation for organizers while allowing
                                 customers the a seamless registration experience.
                             </div>
 
-                            <div className="projects__content__title">
+                            <div className="personal__content__title">
                                 SpkEz Tango
                             </div>
-                            <div className="projects__content__text">
+                            <div className="personal__content__text">
                                 The core purpose of Speakeasy Tango are our events. From small recurring events hidden
                                 in an apartment in D.C., to day long <span
-                                className="projects__content__text--italics">minithons,</span> full on
+                                className="personal__content__text--italics">minithons,</span> full on
                                 marathons, and festivals. We aim to create events that meet certain criteria:
-                                <ul className="projects__content__text__list">
+                                <ul className="personal__content__text__list">
                                     <li>
                                         They work, where they are and when they are
                                     </li>
@@ -96,14 +104,15 @@ class App extends Component {
                                 </ul>
                             </div>
 
-                            <div className="projects__content__title">
-                                Buyer's Guide: Economy Bot
+                            <div className="personal__content__title">
+                                Buyer's Guide: Economy Chatbot
                             </div>
-                            <div className="projects__content__text">
+                            <div className="personal__content__text">
                                 As a long-time World of Warcraft player and a mathemtics and economy nerd I've been
                                 study the in-game market economics of the game since it's release in 2004. Along with my
                                 friend and coding partner, <a href="https://github.com/Heanthor"
-                                                              className="projects__content__text--link">Reed Trevelyan</a>, we
+                                                              className="personal__content__text--link">Reed
+                                Trevelyan</a>, we
                                 worked to
                                 bring my designs to life. Reed's efforts took the concept and specifications: an
                                 interface to allow users to esily obtain information on the market value of products and
@@ -116,24 +125,89 @@ class App extends Component {
                     </div>
                 </section>
 
-                {/*<div className="projects">*/}
-                {/*    <div className="col-12">*/}
-                {/*        Between work and hope I tend to keep myself busy with more than a few projects.*/}
-                {/*    </div>*/}
-                {/*    <div className="projects__dcGov"></div>*/}
+                <section className="projects">
+                    <div className="projects__inside">
+                        <div className="projects__content container justify-content-center">
+                            <div className="projects__content__opener">
+                                Below is a sample of some projects I've worked on and the technical skills used on them:
+                            </div>
+                            <div className="row">
+                                <div className="projects__content__work col-12 col-md-6">
+                                    DC Data Lake
+                                </div>
+                                <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
+                                    <li className="projects__content__skill">Wire Frames</li>
+                                    <li className="projects__content__skill">UI/UX</li>
+                                    <li className="projects__content__skill">Logo Design</li>
+                                    <li className="projects__content__skill">Front End Dev: Angular</li>
+                                    <li className="projects__content__skill">HTML, SCSS, TypeScript</li>
+                                </ul>
+                            </div>
+                            <div className="row">
+                                <div className="projects__content__work col-12 col-md-6">
+                                    <a className="projects__content__work--link" href="http://crimecards.dc.gov/">DC
+                                        Crime Cards</a>
+                                </div>
+                                <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
+                                    <li className="projects__content__skill">Wire Frames</li>
+                                    <li className="projects__content__skill">Mock Up</li>
+                                    <li className="projects__content__skill">UI/UX</li>
+                                    <li className="projects__content__skill">Symbology Design</li>
+                                    <li className="projects__content__skill">Front End Dev: Angular</li>
+                                    <li className="projects__content__skill">HTML, SCSS, TypeScript</li>
+                                </ul>
+                            </div>
+                            <div className="row">
+                                <div className="projects__content__work col-12 col-md-6">
+                                    <a className="projects__content__work--link" href="http://speakeasytango.com/">Speakeasy
+                                        Registration System</a>
+                                </div>
+                                <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
+                                    <li className="projects__content__skill">Wire Frames</li>
+                                    <li className="projects__content__skill">Mock Up</li>
+                                    <li className="projects__content__skill">UI/UX</li>
+                                    <li className="projects__content__skill">Front End Dev: React</li>
+                                    <li className="projects__content__skill">User Testing</li>
+                                    <li className="projects__content__skill">HTML, SCSS, JavaScript</li>
+                                </ul>
+                            </div>
+                            <div className="row">
+                                <div className="projects__content__work col-12 col-md-6">
+                                    <a className="projects__content__work--link"
+                                       href="https://github.com/Heanthor/auctioneer-bot">Buyer's
+                                        Guide: Economy Chatbot</a>
+                                </div>
+                                <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
+                                    <li className="projects__content__skill">Wire Frames</li>
+                                    <li className="projects__content__skill">UI/UX</li>
+                                    <li className="projects__content__skill">Python</li>
+                                    <li className="projects__content__skill">Economic Analysis</li>
+                                </ul>
+                            </div>
 
-                {/*    <div className="projects__spkez"></div>*/}
-                {/*    <div className="projects__bg"></div>*/}
-                {/*</div>*/}
+                        </div>
+                    </div>
+                </section>
 
-                {/*<section className="row atc">*/}
-                {/*</section>*/}
+                <section className="contact">
+                    <div className="contact__inside container-fluid">
+                        <div className="container justify-content-center contact__content">
 
-                {/*<section className="row undergrad">*/}
-                {/*</section>*/}
+                            <div className="contact__content__hire">
+                                I'm always looking for interesting projects and teams. If you think I could be a good
+                                fit for your <a className="contact__content__hire--link" href="">get in touch</a>.
+                            </div>
+                            <div className="contact__content__follow">
+                                Otherwise feel free to follow my work and check out Speakeasy Tango's newest projects
+                            </div>
+                            <div className="row">
+                                <a className="col-6 contact__content__connect">Github</a>
+                                <a className="col-6 contact__content__connect">SpkEz</a>
+                            </div>
 
-                {/*<section className="row dreamWizards">*/}
-                {/*</section>*/}
+                        </div>
+                    </div>
+                </section>
 
             </div>
         );
