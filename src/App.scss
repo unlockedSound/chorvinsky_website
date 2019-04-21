@@ -21,19 +21,20 @@ $serika-accent: #1c1f25;
   background: linear-gradient($direction, $color-one 52%, $color-two 52%);
 }
 
-$naut-primary: #f8cf41;
-$naut-secondary: #27416b;
-$naut-tertiary: #28314d;
+$naut-text-1: #f8cf41;
+$naut-text-2: #d82a26;
+$naut__back--light: #27416b;
+$naut__back--dark: #28314d;
 $naut-accent: #64f9f9;
 
 @mixin naut__gradient--internal() {
-  background: $naut-tertiary;
-  background: linear-gradient(205deg, $naut-tertiary 52%, $naut-secondary 52%);
+  background: $naut__back--dark;
+  background: linear-gradient(205deg, $naut__back--dark 52%, $naut__back--light 52%);
 }
 
 @mixin naut__gradient--external() {
-  background: $naut-tertiary;
-  background: linear-gradient(180deg, $naut-tertiary 52%, $naut-secondary 52%);
+  background: $naut__back--dark;
+  background: linear-gradient(180deg, $naut__back--dark 52%, $naut__back--light 52%);
 }
 
 //$nightmare-primary:   #009680;
@@ -42,18 +43,18 @@ $naut-accent: #64f9f9;
 //$nightmare-accent:    #00c2a3;
 
 $nightmare-tertiary: #40CAA7;
-$nightmare-primary: #052d28;
+$nightmare__back--dark: #052d28;
 $nightmare-accent: #55E1BD;
-$nightmare-secondary: #009680;
+$nightmare__back--light: #009680;
 
 @mixin nightmare__gradient--internal() {
   //background: $naut-tertiary;
-  background: linear-gradient(205deg, $nightmare-tertiary 52%, $nightmare-secondary 52%);
+  background: linear-gradient(205deg, $nightmare-tertiary 52%, $nightmare__back--light 52%);
 }
 
 @mixin nightmare__gradient--external() {
   //background: $naut-tertiary;
-  background: linear-gradient(180deg, $nightmare-tertiary 52%, $nightmare-secondary 52%);
+  background: linear-gradient(180deg, $nightmare-tertiary 52%, $nightmare__back--light 52%);
 }
 
 //text
@@ -66,14 +67,14 @@ $nightmare-secondary: #009680;
 }
 
 //section spacing
-@mixin section-spacer($first-bottom-other) {
-  @if $first-bottom-other == first {
+@mixin section-spacer($first-other-bottom) {
+  @if $first-other-bottom == first {
     padding: {
       top: 5rem;
       bottom: 1.5rem;
     }
 
-  } @else if $first-bottom-other == other {
+  } @else if $first-other-bottom == other {
     padding: {
       top: 1.5rem;
       bottom: 1.5rem;
@@ -81,8 +82,21 @@ $nightmare-secondary: #009680;
   } @else {
     padding: {
       top: 1.5rem;
-      bottom: 3rem;
+      bottom: 15rem;
     }
+
+    @media (min-width: 768px) {
+      padding: {
+        bottom: 10rem;
+      }
+    }
+
+    @media (min-width: 992px) {
+      padding: {
+        bottom: 7.5rem
+      }
+    }
+
   }
 }
 
@@ -172,7 +186,7 @@ $nightmare-secondary: #009680;
 }
 
 .page {
-
+  position: relative;
 }
 
 .navigation {
@@ -251,28 +265,28 @@ $nightmare-secondary: #009680;
 .about {
   @include section-spacer(other);
   @include secondary-text();
-  @include background-gradient($horizontal, $nightmare-tertiary, $nightmare-secondary);
+  @include background-gradient($horizontal, $naut__back--light, $naut__back--dark);
 
   &__inside {
-    @include background-gradient($left-to-right, $nightmare-tertiary, $nightmare-secondary);
+    @include background-gradient($left-to-right, $naut__back--light, $naut__back--dark);
     @include inside-section();
   }
   &__content {
     @include content-spacer;
 
     &__opener {
-      color: $nightmare-primary;
+      color: $naut-text-1;
       font-size: $med-text;
 
     }
 
     &__title {
-      @include title-style($nightmare-accent, $large-text);
-      text-shadow: 2px 2px 2px $nightmare-secondary;
+      @include title-style($naut-accent, $large-text);
+      //text-shadow: 2px 2px 2px $nau;
     }
 
     &__text {
-      @include text-style($nightmare-primary, $med-text);
+      @include text-style($naut-text-1, $med-text);
       @include extra-text;
 
       &__special {
@@ -281,7 +295,7 @@ $nightmare-secondary: #009680;
         }
         font: {
           style: italic;
-          size: $sm-ish-text;
+          size: initial;
         }
         @include extra-text;
       }
@@ -294,10 +308,10 @@ $nightmare-secondary: #009680;
 .personal {
   @include section-spacer(other);
   @include secondary-text();
-  @include background-gradient($horizontal, $naut-tertiary, $naut-secondary);
+  @include background-gradient($horizontal, $nightmare__back--dark, $nightmare__back--light);
 
   &__inside {
-    @include background-gradient($right-to-left, $naut-tertiary, $naut-secondary);
+    @include background-gradient($right-to-left, $nightmare__back--dark, $nightmare__back--light);
     @include inside-section();
   }
   &__content {
@@ -309,7 +323,7 @@ $nightmare-secondary: #009680;
     }
 
     &__opener {
-      @include text-style($naut-primary, $med-text);
+      @include text-style($naut-text-1, $med-text);
     }
 
     &__title {
@@ -317,14 +331,14 @@ $nightmare-secondary: #009680;
     }
 
     &__text {
-      @include text-style($naut-primary, $sm-ish-text);
+      @include text-style($naut-text-1, $sm-ish-text);
 
       &--italics {
         font-style: italic;
       }
 
       &__list {
-        color: $naut-primary;
+        color: $naut-text-1;
         font: {
           size: initial;
         }
@@ -332,14 +346,15 @@ $nightmare-secondary: #009680;
       }
 
       &--link {
-        background: linear-gradient(to left, $naut-accent, $naut-primary);
+        background: linear-gradient(to left, $naut-accent, $naut-text-1);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         white-space: nowrap;
-        border-bottom: 1px solid $naut-primary;
+        border-bottom: 1px solid $naut-text-1;
 
         &:hover {
           border-bottom: 1px solid $naut-accent;
+          text-decoration: none;
         }
 
       }
@@ -351,32 +366,32 @@ $nightmare-secondary: #009680;
 .projects {
   @include section-spacer(other);
   @include secondary-text();
-  @include background-gradient($horizontal, $serika-secondary, $serika-tertiary);
+  @include background-gradient($horizontal, $naut__back--light, $naut__back--dark);
 
   &__inside {
-    @include background-gradient($left-to-right, $serika-secondary, $serika-tertiary);
+    @include background-gradient($left-to-right, $naut__back--light, $naut__back--dark);
     @include inside-section();
   }
   &__content {
     @include content-spacer;
-    text-shadow: 1px 1px 1px $serika-tertiary;
+    //text-shadow: 1px 1px 1px $serika-tertiary;
 
     &__opener {
-      @include text-style($serika-primary, $med-text);
+      @include text-style($naut-text-1, $med-text);
     }
 
     &__work {
-      @include title-style($serika-accent, $large-text);
+      @include title-style($naut-accent, $large-text);
 
       &--link {
-        background: linear-gradient($left-to-right, $serika-primary, $serika-secondary);
+        background: linear-gradient($right-to-left, $naut-accent, $naut-text-1);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        border-bottom: 1px solid $serika-primary;
+        border-bottom: 1px solid $naut-text-1;
         text-shadow: none;
 
         &:hover {
-          border-bottom: 1px solid $serika-secondary;
+          border-bottom: 1px solid $naut-accent;
           text-decoration: none;
         }
       }
@@ -384,24 +399,26 @@ $nightmare-secondary: #009680;
     }
 
     &__skill {
-      @include text-style($serika-accent, $sm-ish-text);
+      @include text-style($naut-text-1, $sm-ish-text);
       padding-bottom: 0;
 
       &__list {
-
-      }
-
-      &--link {
-        background: linear-gradient(to left, $serika-primary, $serika-secondary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        border-bottom: 1px solid $serika-primary;
-
-        &:hover {
-          border-bottom: 1px solid $serika-secondary;
+        padding: {
+          left: 4rem;
         }
-
       }
+
+      //&--link {
+      //  background: linear-gradient(to left, $serika-primary, $serika-secondary);
+      //  -webkit-background-clip: text;
+      //  -webkit-text-fill-color: transparent;
+      //  border-bottom: 1px solid $serika-primary;
+      //
+      //  &:hover {
+      //    border-bottom: 1px solid $serika-secondary;
+      //  }
+      //
+      //}
     }
   }
 }
@@ -409,10 +426,10 @@ $nightmare-secondary: #009680;
 .contact {
   @include section-spacer(last);
   @include secondary-text();
-  @include background-gradient($horizontal, $naut-tertiary, $naut-secondary);
+  @include background-gradient($horizontal, $nightmare__back--dark, $nightmare__back--light);
 
   &__inside {
-    @include background-gradient($right-to-left, $naut-tertiary, $naut-secondary);
+    @include background-gradient($right-to-left, $nightmare__back--dark, $nightmare__back--light);
     @include inside-section();
   }
 
@@ -420,29 +437,57 @@ $nightmare-secondary: #009680;
     @include content-spacer;
 
     &__hire {
-      color: $nightmare-primary;
+      color: $naut-text-1;
       font-size: $sm-ish-text;
+      padding: {
+        bottom: 2rem;
+      }
 
-      &--link{
-        background: linear-gradient(to left, $nightmare-accent, $nightmare-secondary);
+      &--link {
+        background: linear-gradient($right-to-left, $naut-text-1, $naut-accent);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         white-space: nowrap;
-        border-bottom: 1px solid $naut-primary;
+        border-bottom: 1px solid $naut-text-1;
+
+        &:hover {
+          text-decoration: none;
+          border-bottom: 1px solid $naut-accent;
+        }
       }
 
     }
 
     &__follow {
-      @include text-style($nightmare-primary, $med-text);
+      @include text-style($naut-accent, $med-text);
       @include extra-text;
-    }
 
-    &__connect {
-      @include text-style($nightmare-primary, $med-text);
-      @include extra-text;
+      &--link {
+        background: linear-gradient($right-to-left, $naut-text-1, $naut-accent);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        white-space: nowrap;
+        border-bottom: 1px solid $naut-text-1;
+
+        &:hover {
+          text-decoration: none;
+          border-bottom: 1px solid $naut-accent;
+        }
+
+      }
+
     }
 
   }
+}
 
+.copy {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  padding: {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
 }

@@ -1,3 +1,6 @@
+.page {
+  position: relative; }
+
 .navigation__box {
   background-color: yellow;
   opacity: .5;
@@ -63,11 +66,11 @@
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   font-family: 'Montserrat', sans-serif;
-  background: #40CAA7;
-  background: linear-gradient(180deg, #40CAA7 52%, #009680 52%); }
+  background: #27416b;
+  background: linear-gradient(180deg, #27416b 52%, #28314d 52%); }
   .about__inside {
-    background: #40CAA7;
-    background: linear-gradient(205deg, #40CAA7 52%, #009680 52%);
+    background: #27416b;
+    background: linear-gradient(205deg, #27416b 52%, #28314d 52%);
     min-width: 100%;
     min-height: 600px;
     display: flex;
@@ -85,16 +88,15 @@
   .about__content {
     padding-top: 2rem; }
     .about__content__opener {
-      color: #052d28;
+      color: #f8cf41;
       font-size: 1.75rem; }
     .about__content__title {
-      color: #55E1BD;
+      color: #64f9f9;
       font-size: 2.5rem;
       font-weight: bold;
-      mix-blend-mode: hard-light;
-      text-shadow: 2px 2px 2px #009680; }
+      mix-blend-mode: hard-light; }
     .about__content__text {
-      color: #052d28;
+      color: #f8cf41;
       padding-bottom: 2rem;
       font-size: 1.75rem;
       mix-blend-mode: hard-light; }
@@ -103,7 +105,7 @@
       .about__content__text__special {
         padding-top: 1rem;
         font-style: italic;
-        font-size: 1.25rem; }
+        font-size: initial; }
         .about__content__text__special--extra {
           color: #00fff7; }
 
@@ -111,11 +113,11 @@
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   font-family: 'Montserrat', sans-serif;
-  background: #28314d;
-  background: linear-gradient(180deg, #28314d 52%, #27416b 52%); }
+  background: #052d28;
+  background: linear-gradient(180deg, #052d28 52%, #009680 52%); }
   .personal__inside {
-    background: #28314d;
-    background: linear-gradient(155deg, #28314d 52%, #27416b 52%);
+    background: #052d28;
+    background: linear-gradient(155deg, #052d28 52%, #009680 52%);
     min-width: 100%;
     min-height: 600px;
     display: flex;
@@ -162,17 +164,18 @@
         white-space: nowrap;
         border-bottom: 1px solid #f8cf41; }
         .personal__content__text--link:hover {
-          border-bottom: 1px solid #64f9f9; }
+          border-bottom: 1px solid #64f9f9;
+          text-decoration: none; }
 
 .projects {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   font-family: 'Montserrat', sans-serif;
-  background: #dad6c4;
-  background: linear-gradient(180deg, #dad6c4 52%, #464752 52%); }
+  background: #27416b;
+  background: linear-gradient(180deg, #27416b 52%, #28314d 52%); }
   .projects__inside {
-    background: #dad6c4;
-    background: linear-gradient(205deg, #dad6c4 52%, #464752 52%);
+    background: #27416b;
+    background: linear-gradient(205deg, #27416b 52%, #28314d 52%);
     min-width: 100%;
     min-height: 600px;
     display: flex;
@@ -188,50 +191,50 @@
       .projects__inside {
         min-height: 1000px; } }
   .projects__content {
-    padding-top: 2rem;
-    text-shadow: 1px 1px 1px #464752; }
+    padding-top: 2rem; }
     .projects__content__opener {
-      color: #ffcd01;
+      color: #f8cf41;
       padding-bottom: 2rem;
       font-size: 1.75rem;
       mix-blend-mode: hard-light; }
     .projects__content__work {
-      color: #1c1f25;
+      color: #64f9f9;
       font-size: 2.5rem;
       font-weight: bold;
       mix-blend-mode: hard-light; }
       .projects__content__work--link {
-        background: linear-gradient(205deg, #ffcd01, #dad6c4);
+        background: linear-gradient(155deg, #64f9f9, #f8cf41);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        border-bottom: 1px solid #ffcd01;
+        border-bottom: 1px solid #f8cf41;
         text-shadow: none; }
         .projects__content__work--link:hover {
-          border-bottom: 1px solid #dad6c4;
+          border-bottom: 1px solid #64f9f9;
           text-decoration: none; }
     .projects__content__skill {
-      color: #1c1f25;
+      color: #f8cf41;
       padding-bottom: 2rem;
       font-size: 1.25rem;
       mix-blend-mode: hard-light;
       padding-bottom: 0; }
-      .projects__content__skill--link {
-        background: linear-gradient(to left, #ffcd01, #dad6c4);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        border-bottom: 1px solid #ffcd01; }
-        .projects__content__skill--link:hover {
-          border-bottom: 1px solid #dad6c4; }
+      .projects__content__skill__list {
+        padding-left: 4rem; }
 
 .contact {
   padding-top: 1.5rem;
-  padding-bottom: 3rem;
+  padding-bottom: 15rem;
   font-family: 'Montserrat', sans-serif;
-  background: #28314d;
-  background: linear-gradient(180deg, #28314d 52%, #27416b 52%); }
+  background: #052d28;
+  background: linear-gradient(180deg, #052d28 52%, #009680 52%); }
+  @media (min-width: 768px) {
+    .contact {
+      padding-bottom: 10rem; } }
+  @media (min-width: 992px) {
+    .contact {
+      padding-bottom: 7.5rem; } }
   .contact__inside {
-    background: #28314d;
-    background: linear-gradient(155deg, #28314d 52%, #27416b 52%);
+    background: #052d28;
+    background: linear-gradient(155deg, #052d28 52%, #009680 52%);
     min-width: 100%;
     min-height: 600px;
     display: flex;
@@ -249,27 +252,41 @@
   .contact__content {
     padding-top: 2rem; }
     .contact__content__hire {
-      color: #052d28;
-      font-size: 1.25rem; }
+      color: #f8cf41;
+      font-size: 1.25rem;
+      padding-bottom: 2rem; }
       .contact__content__hire--link {
-        background: linear-gradient(to left, #55E1BD, #009680);
+        background: linear-gradient(155deg, #f8cf41, #64f9f9);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         white-space: nowrap;
         border-bottom: 1px solid #f8cf41; }
+        .contact__content__hire--link:hover {
+          text-decoration: none;
+          border-bottom: 1px solid #64f9f9; }
     .contact__content__follow {
-      color: #052d28;
+      color: #64f9f9;
       padding-bottom: 2rem;
       font-size: 1.75rem;
       mix-blend-mode: hard-light; }
       .contact__content__follow--extra {
         color: #00fff7; }
-    .contact__content__connect {
-      color: #052d28;
-      padding-bottom: 2rem;
-      font-size: 1.75rem;
-      mix-blend-mode: hard-light; }
-      .contact__content__connect--extra {
-        color: #00fff7; }
+      .contact__content__follow--link {
+        background: linear-gradient(155deg, #f8cf41, #64f9f9);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        white-space: nowrap;
+        border-bottom: 1px solid #f8cf41; }
+        .contact__content__follow--link:hover {
+          text-decoration: none;
+          border-bottom: 1px solid #64f9f9; }
+
+.copy {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem; }
 
 /*# sourceMappingURL=App.css.map */

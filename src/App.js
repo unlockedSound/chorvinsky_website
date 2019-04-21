@@ -57,7 +57,7 @@ class App extends Component {
                             <div className="about__content__text__special about__content__text__special--extra">
                                 *&#8230;with title of UI/UX and Front End Web Developer who does everything from
                                 initial wire frames, user testing, and building applications to defining specification,
-                                managing issue boards, and .
+                                managing issue boards, and anything else that needs doing.
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@ class App extends Component {
                                 active projects:
                             </div>
                             <div className="personal__content__title">
-                                Speakeasy Registration
+                                SpkEasy Registration
                             </div>
                             <div className="personal__content__text">
                                 Making up half of Speakeasy Tango's business, this custom registration system is
@@ -81,7 +81,7 @@ class App extends Component {
                             </div>
 
                             <div className="personal__content__title">
-                                SpkEz Tango
+                                Speakeasy Tango
                             </div>
                             <div className="personal__content__text">
                                 The core purpose of Speakeasy Tango are our events. From small recurring events hidden
@@ -126,7 +126,7 @@ class App extends Component {
                 </section>
 
                 <section className="projects">
-                    <div className="projects__inside">
+                    <div className="projects__inside container-fluid">
                         <div className="projects__content container justify-content-center">
                             <div className="projects__content__opener">
                                 Below is a sample of some projects I've worked on and the technical skills used on them:
@@ -159,8 +159,8 @@ class App extends Component {
                             </div>
                             <div className="row">
                                 <div className="projects__content__work col-12 col-md-6">
-                                    <a className="projects__content__work--link" href="http://speakeasytango.com/">Speakeasy
-                                        Registration System</a>
+                                    <a className="projects__content__work--link" href="http://speakeasytango.com/">
+                                        SpkEasy Registration&</a>
                                 </div>
                                 <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
                                     <li className="projects__content__skill">Wire Frames</li>
@@ -199,14 +199,29 @@ class App extends Component {
                             </div>
                             <div className="contact__content__follow">
                                 Otherwise feel free to follow my work and check out Speakeasy Tango's newest projects
-                            </div>
-                            <div className="row">
-                                <a className="col-6 contact__content__connect">Github</a>
-                                <a className="col-6 contact__content__connect">SpkEz</a>
+                                <div className="row">
+                                    <a className="col-6">
+                                        <span className="contact__content__follow--link">
+                                            Github
+                                        </span>
+                                    </a>
+                                    <a className="col-6">
+                                        <span className="contact__content__follow--link">
+                                            SpkEz
+                                        </span>
+                                    </a>
+                                </div>
                             </div>
 
                         </div>
                     </div>
+                </section>
+
+                <section className="copy">
+                    Speakeasy Tango names and content used with permission of Speakeasy Tango LLC. all rights reserved |
+                    Buyer's Guide: Economy Chatbot&#8482; is the property of Reed Trevelyn and David Chorvinsky all
+                    rights reserved | All other content and design are sole property of David Chorvinsky all rights
+                    reserved
                 </section>
 
             </div>
