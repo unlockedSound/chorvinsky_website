@@ -369,7 +369,7 @@ $nightmare-secondary: #009680;
       @include title-style($serika-accent, $large-text);
 
       &--link {
-        background: linear-gradient($right-to-left, $serika-primary, $serika-secondary);
+        background: linear-gradient($left-to-right, $serika-primary, $serika-secondary);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         border-bottom: 1px solid $serika-primary;
@@ -384,7 +384,7 @@ $nightmare-secondary: #009680;
     }
 
     &__skill {
-      @include text-style($serika-primary, $sm-ish-text);
+      @include text-style($serika-accent, $sm-ish-text);
       padding-bottom: 0;
 
       &__list {
