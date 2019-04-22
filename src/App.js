@@ -131,8 +131,8 @@ class App extends Component {
                             <div className="projects__content__opener">
                                 Below is a sample of some projects I've worked on and the technical skills used on them:
                             </div>
-                            <div className="row">
-                                <div className="projects__content__work col-12 col-md-6">
+                            <div className="row projects__content__work">
+                                <div className="projects__content__work__title col-12 col-md-6">
                                     DC Data Lake
                                 </div>
                                 <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
@@ -143,9 +143,9 @@ class App extends Component {
                                     <li className="projects__content__skill">HTML, SCSS, TypeScript</li>
                                 </ul>
                             </div>
-                            <div className="row">
-                                <div className="projects__content__work col-12 col-md-6">
-                                    <a className="projects__content__work--link" href="http://crimecards.dc.gov/">DC
+                            <div className="row projects__content__work">
+                                <div className="projects__content__work__title col-12 col-md-6">
+                                    <a className="projects__content__work__title--link" href="http://crimecards.dc.gov/">DC
                                         Crime Cards</a>
                                 </div>
                                 <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
@@ -157,9 +157,9 @@ class App extends Component {
                                     <li className="projects__content__skill">HTML, SCSS, TypeScript</li>
                                 </ul>
                             </div>
-                            <div className="row">
-                                <div className="projects__content__work col-12 col-md-6">
-                                    <a className="projects__content__work--link" href="http://speakeasytango.com/">
+                            <div className="row projects__content__work">
+                                <div className="projects__content__work__title col-12 col-md-6">
+                                    <a className="projects__content__work__title--link" href="http://speakeasytango.com/">
                                         SpkEasy Registration&</a>
                                 </div>
                                 <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
@@ -171,9 +171,9 @@ class App extends Component {
                                     <li className="projects__content__skill">HTML, SCSS, JavaScript</li>
                                 </ul>
                             </div>
-                            <div className="row">
-                                <div className="projects__content__work col-12 col-md-6">
-                                    <a className="projects__content__work--link"
+                            <div className="row projects__content__work">
+                                <div className="projects__content__work__title col-12 col-md-6">
+                                    <a className="projects__content__work__title--link"
                                        href="https://github.com/Heanthor/auctioneer-bot">Buyer's
                                         Guide: Economy Chatbot</a>
                                 </div>
@@ -207,7 +207,7 @@ class App extends Component {
                                     </a>
                                     <a className="col-6">
                                         <span className="contact__content__follow--link">
-                                            SpkEz
+                                            Speakeasy Tango
                                         </span>
                                     </a>
                                 </div>

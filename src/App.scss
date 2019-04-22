@@ -22,10 +22,11 @@ $serika-accent: #1c1f25;
 }
 
 $naut-text-1: #f8cf41;
-$naut-text-2: #d82a26;
+$naut-text-2: #fff;
 $naut__back--light: #27416b;
 $naut__back--dark: #28314d;
 $naut-accent: #64f9f9;
+$naut-accent-2: #d82a26;
 
 @mixin naut__gradient--internal() {
   background: $naut__back--dark;
@@ -323,7 +324,7 @@ $nightmare__back--light: #009680;
     }
 
     &__opener {
-      @include text-style($naut-text-1, $med-text);
+      @include text-style($naut-text-2, $med-text);
     }
 
     &__title {
@@ -331,14 +332,14 @@ $nightmare__back--light: #009680;
     }
 
     &__text {
-      @include text-style($naut-text-1, $sm-ish-text);
+      @include text-style($naut-text-2, $sm-ish-text);
 
       &--italics {
         font-style: italic;
       }
 
       &__list {
-        color: $naut-text-1;
+        color: $naut-text-2;
         font: {
           size: initial;
         }
@@ -381,21 +382,32 @@ $nightmare__back--light: #009680;
     }
 
     &__work {
-      @include title-style($naut-accent, $large-text);
-
-      &--link {
-        background: linear-gradient($right-to-left, $naut-accent, $naut-text-1);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        border-bottom: 1px solid $naut-text-1;
-        text-shadow: none;
-
-        &:hover {
-          border-bottom: 1px solid $naut-accent;
-          text-decoration: none;
-        }
+      padding: {
+        top: 1.5rem;
+        bottom: 1.5rem;
       }
+      &__title {
+        @include title-style($naut-accent, $large-text);
+        padding: {
+          bottom: 1rem;
+        }
+        margin: auto;
 
+        &--link {
+          background: linear-gradient($right-to-left, $naut-accent, $naut-text-1);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          border-bottom: 1px solid $naut-text-1;
+          text-shadow: none;
+          margin: auto;
+
+          &:hover {
+            border-bottom: 1px solid $naut-accent;
+            text-decoration: none;
+          }
+        }
+
+      }
     }
 
     &__skill {
@@ -406,6 +418,8 @@ $nightmare__back--light: #009680;
         padding: {
           left: 4rem;
         }
+        margin: auto;
+
       }
 
       //&--link {
@@ -437,10 +451,11 @@ $nightmare__back--light: #009680;
     @include content-spacer;
 
     &__hire {
-      color: $naut-text-1;
-      font-size: $sm-ish-text;
+      color: $naut-text-2;
+      font-size: $med-text;
       padding: {
-        bottom: 2rem;
+        top: 3rem;
+        bottom: 3rem;
       }
 
       &--link {
@@ -459,7 +474,7 @@ $nightmare__back--light: #009680;
     }
 
     &__follow {
-      @include text-style($naut-accent, $med-text);
+      @include text-style($naut-text-2, $med-text);
       @include extra-text;
 
       &--link {
@@ -468,6 +483,7 @@ $nightmare__back--light: #009680;
         -webkit-text-fill-color: transparent;
         white-space: nowrap;
         border-bottom: 1px solid $naut-text-1;
+        text-align: center;
 
         &:hover {
           text-decoration: none;

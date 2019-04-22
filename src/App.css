@@ -202,13 +202,13 @@
       font-size: 2.5rem;
       font-weight: bold;
       mix-blend-mode: hard-light; }
-      .projects__content__work--link {
+      .projects__content__work__title--link {
         background: linear-gradient(155deg, #64f9f9, #f8cf41);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         border-bottom: 1px solid #f8cf41;
         text-shadow: none; }
-        .projects__content__work--link:hover {
+        .projects__content__work__title--link:hover {
           border-bottom: 1px solid #64f9f9;
           text-decoration: none; }
     .projects__content__skill {
