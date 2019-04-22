@@ -324,7 +324,7 @@ $nightmare__back--light: #009680;
     }
 
     &__opener {
-      @include text-style($naut-text-2, $med-text);
+      @include text-style($naut-text-1, $med-text);
     }
 
     &__title {
@@ -332,14 +332,14 @@ $nightmare__back--light: #009680;
     }
 
     &__text {
-      @include text-style($naut-text-2, $sm-ish-text);
+      @include text-style($naut-text-1, $sm-ish-text);
 
       &--italics {
         font-style: italic;
       }
 
       &__list {
-        color: $naut-text-2;
+        color: $naut-text-1;
         font: {
           size: initial;
         }
@@ -451,11 +451,11 @@ $nightmare__back--light: #009680;
     @include content-spacer;
 
     &__hire {
-      color: $naut-text-2;
+      color: $naut-text-1;
       font-size: $med-text;
       padding: {
         top: 3rem;
-        bottom: 3rem;
+        bottom: 2rem;
       }
 
       &--link {
@@ -474,8 +474,12 @@ $nightmare__back--light: #009680;
     }
 
     &__follow {
-      @include text-style($naut-text-2, $med-text);
+      @include text-style($naut-text-1, $med-text);
       @include extra-text;
+       padding: {
+        top: 2rem;
+        bottom: 3rem;
+      }
 
       &--link {
         background: linear-gradient($right-to-left, $naut-text-1, $naut-accent);
