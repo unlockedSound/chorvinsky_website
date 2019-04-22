@@ -276,7 +276,7 @@ $nightmare__back--light: #009680;
     @include content-spacer;
 
     &__opener {
-      color: $naut-text-1;
+      color: $naut-text-2;
       font-size: $med-text;
 
     }
@@ -287,7 +287,7 @@ $nightmare__back--light: #009680;
     }
 
     &__text {
-      @include text-style($naut-text-1, $med-text);
+      @include text-style($naut-text-2, $med-text);
       @include extra-text;
 
       &__special {
@@ -317,11 +317,6 @@ $nightmare__back--light: #009680;
   }
   &__content {
     @include content-spacer;
-
-    &__section {
-      color: #4e8de1;
-      font-size: $med-text;
-    }
 
     &__opener {
       @include text-style($naut-text-1, $med-text);
@@ -378,7 +373,7 @@ $nightmare__back--light: #009680;
     //text-shadow: 1px 1px 1px $serika-tertiary;
 
     &__opener {
-      @include text-style($naut-text-1, $med-text);
+      @include text-style($naut-text-2, $med-text);
     }
 
     &__work {
@@ -411,7 +406,7 @@ $nightmare__back--light: #009680;
     }
 
     &__skill {
-      @include text-style($naut-text-1, $sm-ish-text);
+      @include text-style($naut-text-2, $sm-ish-text);
       padding-bottom: 0;
 
       &__list {
