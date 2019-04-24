@@ -145,7 +145,8 @@ class App extends Component {
                             </div>
                             <div className="row projects__content__work">
                                 <div className="projects__content__work__title col-12 col-md-6">
-                                    <a className="projects__content__work__title--link" href="http://crimecards.dc.gov/">DC
+                                    <a className="projects__content__work__title--link"
+                                       href="http://crimecards.dc.gov/">DC
                                         Crime Cards</a>
                                 </div>
                                 <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
@@ -159,8 +160,9 @@ class App extends Component {
                             </div>
                             <div className="row projects__content__work">
                                 <div className="projects__content__work__title col-12 col-md-6">
-                                    <a className="projects__content__work__title--link" href="http://speakeasytango.com/">
-                                        SpkEasy Registration&</a>
+                                    <a className="projects__content__work__title--link"
+                                       href="http://speakeasytango.com/">
+                                        SpkEasy Registration</a>
                                 </div>
                                 <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
                                     <li className="projects__content__skill">Wire Frames</li>
@@ -218,10 +220,13 @@ class App extends Component {
                 </section>
 
                 <section className="copy">
-                    Speakeasy Tango names and content used with permission of Speakeasy Tango LLC. all rights reserved |
-                    Buyer's Guide: Economy Chatbot&#8482; is the property of Reed Trevelyn and David Chorvinsky all
-                    rights reserved | All other content and design are sole property of David Chorvinsky all rights
-                    reserved
+                    {/*Speakeasy Tango names and content used with permission of Speakeasy Tango LLC. all rights reserved |*/}
+                    {/*Buyer's Guide: Economy Chatbot&#8482; is the property of Reed Trevelyn and David Chorvinsky all*/}
+                    {/*rights reserved | All other content and design are sole property of David Chorvinsky all rights*/}
+                    {/*reserved*/}
+                    <div className="copy__text">
+                        All rights reserved | David Chorvinsky | 2019
+                    </div>
                 </section>
 
             </div>

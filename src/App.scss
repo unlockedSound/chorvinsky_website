@@ -272,6 +272,7 @@ $nightmare__back--light: #009680;
     @include background-gradient($left-to-right, $naut__back--light, $naut__back--dark);
     @include inside-section();
   }
+
   &__content {
     @include content-spacer;
 
@@ -315,6 +316,7 @@ $nightmare__back--light: #009680;
     @include background-gradient($right-to-left, $nightmare__back--dark, $nightmare__back--light);
     @include inside-section();
   }
+
   &__content {
     @include content-spacer;
 
@@ -368,6 +370,7 @@ $nightmare__back--light: #009680;
     @include background-gradient($left-to-right, $naut__back--light, $naut__back--dark);
     @include inside-section();
   }
+
   &__content {
     @include content-spacer;
     //text-shadow: 1px 1px 1px $serika-tertiary;
@@ -381,6 +384,7 @@ $nightmare__back--light: #009680;
         top: 1.5rem;
         bottom: 1.5rem;
       }
+
       &__title {
         @include title-style($naut-accent, $large-text);
         padding: {
@@ -471,7 +475,7 @@ $nightmare__back--light: #009680;
     &__follow {
       @include text-style($naut-text-1, $med-text);
       @include extra-text;
-       padding: {
+      padding: {
         top: 2rem;
         bottom: 3rem;
       }
@@ -497,12 +501,22 @@ $nightmare__back--light: #009680;
 }
 
 .copy {
-  position: absolute;
-  bottom: 0;
-  color: #fff;
-  padding: {
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
+  //position: absolute;
+  //bottom: 0;
+  //left: 35%;
+  //color: #fff;
+  background: $nightmare__back--light;
+
+  &__text {
+    color: #ffffff;
+    margin: {
+      left: auto;
+      right: auto;
+      //bottom: 1rem;
+    }
+    padding: {
+      bottom: 1rem;
+    }
+    text-align: center;
   }
 }
