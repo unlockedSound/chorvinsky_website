@@ -132,7 +132,7 @@ class App extends Component {
                                 Below is a sample of some projects I've worked on and the technical skills used on them:
                             </div>
                             <div className="row projects__content__work">
-                                <div className="projects__content__work__title col-12 col-md-6">
+                                <div className="projects__content__work__title projects__content__work__title--unlinked col-12 col-md-6">
                                     DC Data Lake
                                 </div>
                                 <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
@@ -144,11 +144,11 @@ class App extends Component {
                                 </ul>
                             </div>
                             <div className="row projects__content__work">
-                                <div className="projects__content__work__title col-12 col-md-6">
-                                    <a className="projects__content__work__title--link"
-                                       href="http://crimecards.dc.gov/">DC
-                                        Crime Cards</a>
-                                </div>
+                                <a className="projects__content__work__title col-12 col-md-6" href="http://crimecards.dc.gov/">
+                                    <span className="projects__content__work__title--link">
+                                        DC Crime Cards
+                                    </span>
+                                </a>
                                 <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
                                     <li className="projects__content__skill">Wire Frames</li>
                                     <li className="projects__content__skill">Mock Up</li>
@@ -159,11 +159,11 @@ class App extends Component {
                                 </ul>
                             </div>
                             <div className="row projects__content__work">
-                                <div className="projects__content__work__title col-12 col-md-6">
-                                    <a className="projects__content__work__title--link"
-                                       href="http://speakeasytango.com/">
-                                        SpkEasy Registration</a>
-                                </div>
+                                <a className="projects__content__work__title col-12 col-md-6" href="http://speakeasytango.com/">
+                                    <span className="projects__content__work__title--link"
+                                       >
+                                        SpkEasy Registration</span>
+                                </a>
                                 <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
                                     <li className="projects__content__skill">Wire Frames</li>
                                     <li className="projects__content__skill">Mock Up</li>
@@ -174,11 +174,11 @@ class App extends Component {
                                 </ul>
                             </div>
                             <div className="row projects__content__work">
-                                <div className="projects__content__work__title col-12 col-md-6">
-                                    <a className="projects__content__work__title--link"
-                                       href="https://github.com/Heanthor/auctioneer-bot">Buyer's
-                                        Guide: Economy Chatbot</a>
-                                </div>
+                                <a className="projects__content__work__title col-12 col-md-6" href="https://github.com/Heanthor/auctioneer-bot">
+                                        <span className="projects__content__work__title--link">
+                                            Buyer's Guide: Economy Chatbot
+                                        </span>
+                                </a>
                                 <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
                                     <li className="projects__content__skill">Wire Frames</li>
                                     <li className="projects__content__skill">UI/UX</li>
@@ -197,21 +197,23 @@ class App extends Component {
 
                             <div className="contact__content__hire">
                                 I'm always looking for interesting projects and teams. If you think I could be a good
-                                fit for your <a className="contact__content__hire--link" href="">get in touch</a>.
+                                fit for your <a className="contact__content__hire--link" href="mailto:d.chorvinsky@gmail.com">
+                                get in touch</a>.
                             </div>
                             <div className="contact__content__follow">
-                                Otherwise feel free to follow my work and check out Speakeasy Tango's newest projects
+                                Otherwise feel free to follow my work and check out my and Speakeasy Tango's newest projects
                                 <div className="row">
-                                    <a className="col-6">
-                                        <span className="contact__content__follow--link">
-                                            Github
-                                        </span>
-                                    </a>
-                                    <a className="col-6">
-                                        <span className="contact__content__follow--link">
+                                    <a className="col-12 col-sm-6" href="speakeasytango.com">
+                                        <span className="contact__content__follow__row--link">
                                             Speakeasy Tango
                                         </span>
                                     </a>
+                                    <a className="col-12 col-sm-6" href="https://github.com/unlockedsound">
+                                        <span className="contact__content__follow__row--link">
+                                            Github
+                                        </span>
+                                    </a>
+
                                 </div>
                             </div>
 
