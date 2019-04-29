@@ -55,9 +55,10 @@ class App extends Component {
                                 Dancer, Event Organizer, Consumer of Fine Cuisine and Beverage, Dungeon Master
                             </div>
                             <div className="about__content__text__special about__content__text__special--extra">
-                                *&#8230;with title of UI/UX and Front End Web Developer who does everything from
-                                initial wire frames, user testing, and building applications to defining specification,
-                                managing issue boards, and anything else that needs doing.
+                                *&#8230;with lot of time spent fulfilling the products as a Front End and UI/UX
+                                Developer doing everything from initial wire frames, user testing, and building
+                                applications to defining specification, managing issue boards, and anything else that
+                                needs doing.
                             </div>
                         </div>
                     </div>
@@ -132,7 +133,8 @@ class App extends Component {
                                 Below is a sample of some projects I've worked on and the technical skills used on them:
                             </div>
                             <div className="row projects__content__work">
-                                <div className="projects__content__work__title projects__content__work__title--unlinked col-12 col-md-6">
+                                <div
+                                    className="projects__content__work__title col-12 col-md-6">
                                     DC Data Lake
                                 </div>
                                 <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
@@ -144,8 +146,10 @@ class App extends Component {
                                 </ul>
                             </div>
                             <div className="row projects__content__work">
-                                <a className="projects__content__work__title col-12 col-md-6" href="http://crimecards.dc.gov/">
-                                    <span className="projects__content__work__title--link">
+                                <a className="projects__content__work__title col-12 col-md-6"
+                                   href="http://crimecards.dc.gov/">
+                                    <span
+                                        className="projects__content__work__title projects__content__work__title--linked">
                                         DC Crime Cards
                                     </span>
                                 </a>
@@ -159,9 +163,11 @@ class App extends Component {
                                 </ul>
                             </div>
                             <div className="row projects__content__work">
-                                <a className="projects__content__work__title col-12 col-md-6" href="http://speakeasytango.com/">
-                                    <span className="projects__content__work__title--link"
-                                       >
+                                <a className="projects__content__work__title col-12 col-md-6"
+                                   href="http://speakeasytango.com/">
+                                    <span
+                                        className="projects__content__work__title projects__content__work__title--linked"
+                                    >
                                         SpkEasy Registration</span>
                                 </a>
                                 <ul className="projects__content__skill__list col-12 offset-md-1 col-md-5">
@@ -174,8 +180,10 @@ class App extends Component {
                                 </ul>
                             </div>
                             <div className="row projects__content__work">
-                                <a className="projects__content__work__title col-12 col-md-6" href="https://github.com/Heanthor/auctioneer-bot">
-                                        <span className="projects__content__work__title--link">
+                                <a className="projects__content__work__title col-12 col-md-6"
+                                   href="https://github.com/Heanthor/auctioneer-bot">
+                                        <span
+                                            className="projects__content__work__title projects__content__work__title--linked">
                                             Buyer's Guide: Economy Chatbot
                                         </span>
                                 </a>
@@ -197,11 +205,13 @@ class App extends Component {
 
                             <div className="contact__content__hire">
                                 I'm always looking for interesting projects and teams. If you think I could be a good
-                                fit for your <a className="contact__content__hire--link" href="mailto:d.chorvinsky@gmail.com">
+                                fit for your <a className="contact__content__hire--link"
+                                                href="mailto:d.chorvinsky@gmail.com">
                                 get in touch</a>.
                             </div>
                             <div className="contact__content__follow">
-                                Otherwise feel free to follow my work and check out my and Speakeasy Tango's newest projects
+                                Otherwise feel free to follow my work and check out my and Speakeasy Tango's newest
+                                projects
                                 <div className="row">
                                     <a className="col-12 col-sm-6" href="speakeasytango.com">
                                         <span className="contact__content__follow__row--link">
