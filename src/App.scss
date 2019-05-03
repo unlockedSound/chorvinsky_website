@@ -71,44 +71,32 @@ $nightmare__back--light: #009680;
 @mixin section-spacer($first-other-bottom) {
   @if $first-other-bottom == first {
     padding: {
-      top: 10rem;
-      bottom: 7.5rem;
+      top: 5rem;
+      bottom: 1.5rem;
     }
+
+  } @else if $first-other-bottom == other {
+    padding: {
+      top: 1.5rem;
+      bottom: 1.5rem;
+    }
+  } @else {
+    padding: {
+      top: 1.5rem;
+      bottom: 15rem;
+    }
+
     @media (min-width: 768px) {
       padding: {
-        top: 7.5rem;
-        bottom: 5rem;
+        bottom: 10rem;
       }
     }
 
     @media (min-width: 992px) {
       padding: {
-        top: 5rem;
-        bottom: 2.5rem;
+        bottom: 7.5rem
       }
     }
-  } @else if $first-other-bottom == other {
-    padding: {
-      top: 12rem;
-      bottom: 12rem;
-    }
-
-  } @else {
-    padding: {
-      top: 12rem;
-      bottom: 15rem;
-    }
-
-    //@media (min-width: 768px) {
-    //  padding: {
-    //    bottom: 10rem;
-    //  }
-    //}
-    //
-    //@media (min-width: 992px) {
-    //  padding: {
-    //    bottom: 7.5rem
-    //  }
 
   }
 }
@@ -399,13 +387,14 @@ $nightmare__back--light: #009680;
 
       &__title {
         @include title-style($naut-accent, $large-text);
-        margin: {
+        padding: {
           bottom: 1rem;
         }
         margin: auto;
         //
         //&--link {
-        color: $naut-accent;
+        background: linear-gradient($right-to-left, $naut-accent, $naut-text-1);
+        -webkit-background-clip: text;
         text-shadow: none;
         margin: auto;
 
@@ -413,11 +402,16 @@ $nightmare__back--light: #009680;
           text-decoration: none;
         }
 
-        &--linked {
-          background: linear-gradient($right-to-left, $naut-accent, $naut-text-1);
-          -webkit-background-clip: text;
+
+        &--unlinked {
+          background: none;
+          color: $naut-accent;
+        }
+
+        &--link {
+          border-bottom: 1px solid $naut-text-1;
           -webkit-text-fill-color: transparent;
-                    border-bottom: 1px solid $naut-text-1;
+
 
           &:hover {
             border-bottom: 1px solid $naut-accent;
