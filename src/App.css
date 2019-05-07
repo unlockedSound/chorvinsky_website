@@ -33,7 +33,7 @@
     text-align: center;
     mix-blend-mode: hard-light; }
     .header__text__main {
-      font-family: 'Oswald', sans-serif;
+      font-family: 'Helvetica Neue', sans-serif;
       font-size: 4rem;
       color: #ffcd01;
       padding-bottom: 2rem; }
@@ -44,24 +44,34 @@
   .header__arrow {
     color: #1c1f25;
     text-align: center;
-    margin-top: 30%;
-    mix-blend-mode: multiply; }
-    .header__arrow--large {
+    mix-blend-mode: multiply;
+    color: #1c1f25;
+    text-align: center;
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+    animation-name: color_change;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 3s;
+    animation-delay: 1s; }
+    .header__arrow:first-child {
+      margin-top: 30%;
       color: #1c1f25;
       text-align: center;
       margin-bottom: 1.5rem;
-      font-size: 2rem; }
-    .header__arrow--medium {
-      color: #1c1f25;
-      text-align: center;
-      margin-bottom: 1.25rem;
-      font-size: 1.5rem; }
-    .header__arrow--small {
+      font-size: 2rem;
+      animation-delay: 0s; }
+    .header__arrow:last-child {
       color: #1c1f25;
       text-align: center;
       font-size: 1rem;
-      padding-bottom: 3rem; }
-
+      padding-bottom: 3rem;
+      animation-delay: 2s; }
+@keyframes color_change {
+  from {
+    color: #1c1f25; }
+  to {
+    color: #ffcd01; } }
 .about {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -86,7 +96,12 @@
       .about__inside {
         min-height: 1000px; } }
   .about__content {
-    padding-top: 2rem; }
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
+    @media (min-width: 992px) {
+      .about__content {
+        padding-bottom: 5rem;
+        padding-top: 5rem; } }
     .about__content__opener {
       color: #fff;
       font-size: 1.75rem; }
@@ -97,7 +112,7 @@
       mix-blend-mode: hard-light; }
     .about__content__text {
       color: #fff;
-      padding-bottom: 2rem;
+      padding-bottom: 2.5rem;
       font-size: 1.75rem;
       mix-blend-mode: hard-light; }
       .about__content__text--extra {
@@ -133,20 +148,26 @@
       .personal__inside {
         min-height: 1000px; } }
   .personal__content {
-    padding-top: 2rem; }
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
+    @media (min-width: 992px) {
+      .personal__content {
+        padding-bottom: 5rem;
+        padding-top: 5rem; } }
     .personal__content__opener {
       color: #f8cf41;
-      padding-bottom: 2rem;
+      padding-bottom: 2.5rem;
       font-size: 1.75rem;
       mix-blend-mode: hard-light; }
     .personal__content__title {
       color: #64f9f9;
       font-size: 2.5rem;
       font-weight: bold;
-      mix-blend-mode: hard-light; }
+      mix-blend-mode: hard-light;
+      padding-bottom: .5rem; }
     .personal__content__text {
       color: #f8cf41;
-      padding-bottom: 2rem;
+      padding-bottom: 2.5rem;
       font-size: 1.25rem;
       mix-blend-mode: hard-light; }
       .personal__content__text--italics {
@@ -188,10 +209,15 @@
       .projects__inside {
         min-height: 1000px; } }
   .projects__content {
-    padding-top: 2rem; }
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
+    @media (min-width: 992px) {
+      .projects__content {
+        padding-bottom: 5rem;
+        padding-top: 5rem; } }
     .projects__content__opener {
       color: #fff;
-      padding-bottom: 2rem;
+      padding-bottom: 2.5rem;
       font-size: 1.75rem;
       mix-blend-mode: hard-light; }
     .projects__content__work {
@@ -221,7 +247,7 @@
             text-decoration: none; }
     .projects__content__skill {
       color: #fff;
-      padding-bottom: 2rem;
+      padding-bottom: 2.5rem;
       font-size: 1.25rem;
       mix-blend-mode: hard-light;
       padding-bottom: 0; }
@@ -231,16 +257,16 @@
 
 .contact {
   padding-top: 1.5rem;
-  padding-bottom: 15rem;
+  padding-bottom: 5rem;
   font-family: 'Montserrat', sans-serif;
   background: #052d28;
   background: linear-gradient(180deg, #052d28 52%, #009680 52%); }
   @media (min-width: 768px) {
     .contact {
-      padding-bottom: 10rem; } }
+      padding-bottom: 7rem; } }
   @media (min-width: 992px) {
     .contact {
-      padding-bottom: 7.5rem; } }
+      padding-bottom: 9rem; } }
   .contact__inside {
     background: #052d28;
     background: linear-gradient(155deg, #052d28 52%, #009680 52%);
@@ -259,7 +285,12 @@
       .contact__inside {
         min-height: 1000px; } }
   .contact__content {
-    padding-top: 2rem; }
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
+    @media (min-width: 992px) {
+      .contact__content {
+        padding-bottom: 5rem;
+        padding-top: 5rem; } }
     .contact__content__hire {
       color: #f8cf41;
       font-size: 1.75rem;
@@ -276,24 +307,26 @@
           border-bottom: 1px solid #64f9f9; }
     .contact__content__follow {
       color: #f8cf41;
-      padding-bottom: 2rem;
+      padding-bottom: 2.5rem;
       font-size: 1.75rem;
       mix-blend-mode: hard-light;
       padding-top: 2rem;
-      padding-bottom: 3rem; }
+      padding-bottom: 3rem;
+      text-decoration: none; }
       .contact__content__follow--extra {
         color: #00fff7; }
-      .contact__content__follow__row {
+      .contact__content__follow__link {
         text-align: center; }
-        .contact__content__follow__row--link {
+        .contact__content__follow__link:hover {
+          text-decoration: none; }
+        .contact__content__follow__link__text {
           background: -webkit-linear-gradient(155deg, #f8cf41, #64f9f9);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           white-space: nowrap;
           border-bottom: 1px solid #f8cf41;
           text-align: center; }
-          .contact__content__follow__row--link:hover {
-            text-decoration: none;
+          .contact__content__follow__link__text:hover {
             border-bottom: 1px solid #64f9f9; }
 
 .copy {

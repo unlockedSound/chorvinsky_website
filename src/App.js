@@ -21,9 +21,9 @@ class App extends Component {
 
                         <div className="header__arrow">
                             {/*todo: switch to fa-chevron-up if page is small (probably just small)*/}
-                            <span className="header__arrow--large  fas fa-chevron-down row col-12"> </span>
-                            <span className="header__arrow--medium fas fa-chevron-down row col-12"> </span>
-                            <span className="header__arrow--small  fas fa-chevron-down row col-12"> </span>
+                            <span className="header__arrow  fas fa-chevron-down row col-12"> </span>
+                            <span className="header__arrow fas fa-chevron-down row col-12"> </span>
+                            <span className="header__arrow fas fa-chevron-down row col-12"> </span>
                         </div>
                     </div>
                 </section>
@@ -204,13 +204,13 @@ class App extends Component {
                             <div className="contact__content__follow">
                                 Otherwise feel free to follow my work and check out my and Speakeasy Tango's newest projects
                                 <div className="row">
-                                    <a className="col-12 col-sm-6" href="speakeasytango.com">
-                                        <span className="contact__content__follow__row--link">
+                                    <a className="col-12 col-sm-6 contact__content__follow__link" href="speakeasytango.com">
+                                        <span className="contact__content__follow__link__text">
                                             Speakeasy Tango
                                         </span>
                                     </a>
-                                    <a className="col-12 col-sm-6" href="https://github.com/unlockedsound">
-                                        <span className="contact__content__follow__row--link">
+                                    <a className="col-12 col-sm-6 contact__content__follow__link" href="https://github.com/unlockedsound">
+                                        <span className="contact__content__follow__link__text">
                                             Github
                                         </span>
                                     </a>

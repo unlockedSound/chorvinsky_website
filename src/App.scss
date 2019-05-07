@@ -5,6 +5,14 @@ $med-text: 1.75rem;
 $sm-ish-text: 1.25rem;
 $xs-text: .9rem;
 
+//@media (min-width: 768px) {
+//  $xl-text: 4.5rem;
+//$large-text: 3rem;
+//$med-text: 2rem;
+//$sm-ish-text: 1.5rem;
+//$xs-text: .9rem;
+//}
+
 //angles
 $left-to-right: 205deg;
 $right-to-left: 155deg;
@@ -60,7 +68,7 @@ $nightmare__back--light: #009680;
 
 //text
 @mixin primary-text() {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
 @mixin secondary-text() {
@@ -83,18 +91,18 @@ $nightmare__back--light: #009680;
   } @else {
     padding: {
       top: 1.5rem;
-      bottom: 15rem;
+      bottom: 5rem;
     }
 
     @media (min-width: 768px) {
       padding: {
-        bottom: 10rem;
+        bottom: 7rem;
       }
     }
 
     @media (min-width: 992px) {
       padding: {
-        bottom: 7.5rem
+        bottom: 9rem
       }
     }
 
@@ -129,6 +137,14 @@ $nightmare__back--light: #009680;
 @mixin content-spacer {
   padding: {
     top: 2rem;
+    bottom: 2rem;
+  }
+
+  @media (min-width: 992px) {
+    padding: {
+      bottom: 5rem;
+      top: 5rem;
+    }
   }
 }
 
@@ -178,7 +194,7 @@ $nightmare__back--light: #009680;
 @mixin text-style($color, $font-size) {
   color: $color;
   padding: {
-    bottom: 2rem;
+    bottom: 2.5rem;
   }
   font: {
     size: $font-size;
@@ -242,24 +258,42 @@ $nightmare__back--light: #009680;
   &__arrow {
     color: $serika-accent;
     text-align: center;
-    margin: {
-      top: 30%;
-    }
+
     mix-blend-mode: multiply;
 
     //TODO: add some animation to this... like fade each in then back out to draw eye down
-    &--large {
+
+    //middle arrow
+    @include next-section-text(second-arrow);
+    animation-name: color_change;
+    //animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 3s;
+    animation-delay: 1s;
+
+
+    &:first-child {
+      margin: {
+        top: 30%;
+      }
       @include next-section-text(first-arrow);
+      animation-delay: 0s;
     }
 
-    &--medium {
-      @include next-section-text(second-arrow);
-    }
-
-    &--small {
+    &:last-child {
       @include next-section-text(third-arrow);
+      animation-delay: 2s;
     }
 
+    @keyframes color_change {
+      from {
+        color: $serika-accent;
+      }
+      to {
+        color: $serika-primary;
+      }
+    }
   }
 }
 
@@ -326,6 +360,9 @@ $nightmare__back--light: #009680;
 
     &__title {
       @include title-style($naut-accent, $large-text);
+      padding: {
+        bottom: .5rem;
+      }
     }
 
     &__text {
@@ -493,11 +530,18 @@ $nightmare__back--light: #009680;
         top: 2rem;
         bottom: 3rem;
       }
+      text-decoration: none;
 
-      &__row {
-        text-align: center;
+      &__link {
+        text: {
+          align: center;
+        }
 
-        &--link {
+        &:hover {
+          text-decoration: none;
+        }
+
+        &__text {
           background: -webkit-linear-gradient($right-to-left, $naut-text-1, $naut-accent);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -506,7 +550,6 @@ $nightmare__back--light: #009680;
           text-align: center;
 
           &:hover {
-            text-decoration: none;
             border-bottom: 1px solid $naut-accent;
           }
 
@@ -516,6 +559,7 @@ $nightmare__back--light: #009680;
     }
 
   }
+
 }
 
 .copy {
