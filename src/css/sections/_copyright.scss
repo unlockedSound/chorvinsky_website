@@ -1,0 +1,21 @@
+@import "../components/_variables.scss";
+@import "../components/_mixins.scss";
+@import "../components/_animations.scss";
+
+
+.copy {
+  background: $background-color-nightmare-dark;
+
+  &__text {
+    color: $text-color-nautilus-secondary;
+    margin: {
+      left: auto;
+      right: auto;
+    }
+    padding: {
+      bottom: 1rem;
+    }
+    text-align: center;
+  }
+
+}

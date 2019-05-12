@@ -1,0 +1,44 @@
+@import "../components/_variables.scss";
+@import "../components/_mixins.scss";
+@import "../components/_animations.scss";
+
+.activities {
+  $text-color-primary: $text-color-nautilus-primary;
+  $text-color-secondary: $text-color-nautilus-secondary;
+  $background-color-light: $background-color-nautilus-light;
+  $background-color-dark: $background-color-nautilus-dark;
+  $light-or-dark-first: light;
+  &__outer {
+    @include section__outer-styling(other, $light-or-dark-first, $background-color-light, $background-color-dark);
+  }
+
+  &__inner {
+    @include section__inner-styling(right, $light-or-dark-first, $background-color-light, $background-color-dark);
+
+    &__content {
+      @include section__inside__content-styling;
+
+      &__opener {
+        @include text-style(body, $text-size-md, normal, 1.25, $text-color-secondary);
+      //  todo: might need font-weight: normal;
+      }
+
+      &__title {
+        @include text-style(title, $text-size-lg, bold, .5, $text-color-primary);
+      }
+
+      &__text {
+        @include text-style(body, $text-size-md, normal, 2.5, $text-color-secondary);
+
+        &--reference {
+          @include text-style(title, $text-size-sm, normal, 1, $text-color-primary);
+          font-style: italic;
+        }
+
+      }
+
+    }
+
+  }
+
+}
