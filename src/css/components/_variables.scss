@@ -1,0 +1,33 @@
+//font-sizes
+$text-size-xl: 4rem; //todo: add media query to adjust font sizes by screen size
+$text-size-lg: 2.5rem;
+$text-size-md: 1.75rem;
+$text-size-sm: 1.25rem;
+$text-size-xs: .9rem;
+
+//media queries
+$screen-mobile-wide: 576px;
+$screen-tablet: 768px;
+$screen-desktop: 992px;
+$screen-desktop-wide: 1200px;
+
+//old angle variables
+//todo: fix this
+$left-to-right: 205deg;
+$right-to-left: 155deg;
+
+//color theme selection
+$text-color-serika-primary: #ffcd01;
+$text-color-serika-secondary: #1c1f25;
+$background-color-serika-light: #dad6c4;
+$background-color-serika-dark: #464752;
+
+$text-color-nautilus-primary: #64f9f9;
+$text-color-nautilus-secondary: #fff;
+$background-color-nautilus-light: #27416b;
+$background-color-nautilus-dark: #28314d;
+
+$text-color-nightmare-primary: #64f9f9;
+$text-color-nightmare-secondary: #f8cf41;
+$background-color-nightmare-light: #009680;
+$background-color-nightmare-dark: #052d28;

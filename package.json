@@ -3,15 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.17",
-    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "bootstrap": "^4.3.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
-    "react-spring": "^8.0.18",
-    "sass": "^1.18.0"
+    "react-spring": "^8.0.20"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,7 +28,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.8.1",
-    "node-sass": "^4.11.0"
+    "@fortawesome/fontawesome-free": "^5.8.2",
+    "node-sass": "^4.12.0",
+    "sass": "^1.20.1"
   }
 }

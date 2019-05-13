@@ -1,0 +1,37 @@
+@import "../components/_variables.scss";
+@import "../components/_mixins.scss";
+@import "../components/_animations.scss";
+
+.header {
+  $text-color-primary: $text-color-serika-primary;
+  $text-color-secondary: $text-color-serika-secondary;
+  $background-color-light: $background-color-serika-light;
+  $background-color-dark: $background-color-serika-dark;
+  $light-or-dark-first: dark;
+  &__outer {
+    @include section__outer-styling(first, $light-or-dark-first, $background-color-light, $background-color-dark);
+  }
+
+  &__inner {
+    @include section__inner-styling(left,  $light-or-dark-first, $background-color-light, $background-color-dark);
+
+    &__content {
+      @include section__inside__content-styling;
+
+      &__title {
+        font-family: Helvetica Neue, sans-serif !important;
+        @include text-style(title, $text-size-xl, normal, 2, $text-color-primary);
+      }
+      text-align: center;
+
+      &__subtitle {
+        //  currently unused
+      }
+
+      @include arrow-styling;
+    }
+
+  }
+
+}
+

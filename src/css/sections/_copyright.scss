@@ -1,0 +1,18 @@
+@import "../components/_variables.scss";
+@import "../components/_mixins.scss";
+@import "../components/_animations.scss";
+
+.copy {
+  @include section-spacer(last);
+  background: $background-color-nightmare-dark;
+
+  &__text {
+    color: $text-color-nautilus-secondary;
+    margin: {
+      left: auto;
+      right: auto;
+    }
+    text-align: center;
+  }
+
+}

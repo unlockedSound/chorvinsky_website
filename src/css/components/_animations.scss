@@ -1,0 +1,30 @@
+@mixin header-arrow-animation-settings($delay) {
+  animation-name: color_change;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 3s;
+
+  @if $delay == top {
+    animation-delay: 0s;
+  } @else if $delay == middle {
+    animation-delay: 1s;
+  } @else if $delay == bottom {
+    animation-delay: 2s;
+  } @else {
+    @error "argument #{$delay} must be top, middle, bottom.";
+  }
+
+}
+@mixin header-arrow-animation-keyframe{
+  @keyframes color_change {
+    from {
+      color: #1c1f25;
+    }
+    to {
+      color: #ffcd01;
+    }
+  }
+
+}
+
+

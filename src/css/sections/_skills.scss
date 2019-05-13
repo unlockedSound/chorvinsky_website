@@ -1,0 +1,88 @@
+@import "../components/_variables.scss";
+@import "../components/_mixins.scss";
+@import "../components/_animations.scss";
+
+.skills {
+  $text-color-primary: $text-color-nautilus-primary;
+  $text-color-secondary: $text-color-nautilus-secondary;
+  $background-color-light: $background-color-nautilus-light;
+  $background-color-dark: $background-color-nautilus-dark;
+  $light-or-dark-first: light;
+
+  &__outer {
+    @include section__outer-styling(other, $light-or-dark-first, $background-color-light, $background-color-dark);
+  }
+
+  &__inner {
+    @include section__inner-styling(right, $light-or-dark-first, $background-color-light, $background-color-dark);
+
+    &__content {
+      @include section__inside__content-styling;
+
+      &__opener {
+        @include text-style(body, $text-size-md, normal, 2.75, $text-color-secondary);
+      }
+
+      &__project {
+        $padding: 3;
+        padding: {
+          bottom: #{$padding}rem;
+        }
+        @media (min-width: $screen-desktop-wide) {
+          padding: {
+            bottom: calc(#{$padding}rem * 2);
+          }
+        }
+
+        &__title {
+          @include text-style(title, $text-size-lg, bold, 1, $text-color-primary);
+          margin: auto;
+
+          //todo: get this into a linked modifier not the main class
+          background: linear-gradient($left-to-right, $text-color-nightmare-primary, $text-color-nightmare-secondary);
+          -webkit-background-clip: text;
+          text-shadow: none;
+          margin: auto;
+
+          &:hover {
+            text-decoration: none;
+          }
+
+          &--unlinked {
+            @include text-style(title, $text-size-lg, bold, .5, $text-color-primary);
+            background: none;
+            color: $text-color-primary;
+          }
+
+          &--link {
+            @include text-style(title, $text-size-lg, bold, .5, $text-color-primary);
+            border-bottom: 1px solid $text-color-nightmare-secondary;
+            -webkit-text-fill-color: transparent;
+            &:hover {
+              border-bottom: 1px solid $text-color-nightmare-primary;
+              text-decoration: none;
+            }
+          }
+
+        }
+
+        &__list {
+          padding: {
+            left: 4rem;
+          }
+          margin: auto;
+          text-align: left;
+          &__item {
+            @include text-style(body, $text-size-sm, normal, 0, $text-color-secondary);
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

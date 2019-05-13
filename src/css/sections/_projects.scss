@@ -1,0 +1,67 @@
+@import "../components/_variables.scss";
+@import "../components/_mixins.scss";
+@import "../components/_animations.scss";
+
+.projects {
+  //set component specific variables
+  //todo: can this really not be mixed in?
+  $text-color-primary: $text-color-nightmare-primary;
+  $text-color-secondary: $text-color-nightmare-secondary;
+  $background-color-light: $background-color-nightmare-light;
+  $background-color-dark: $background-color-nightmare-dark;
+  $light-or-dark-first: dark;
+
+  //todo: make it a mixin?
+  &__outer {
+    @include section__outer-styling(other, $light-or-dark-first, $background-color-light, $background-color-dark);
+  }
+
+  &__inner {
+    @include section__inner-styling(left, $light-or-dark-first, $background-color-light, $background-color-dark);
+
+    &__content {
+      @include section__inside__content-styling;
+
+      &__opener {
+        @include text-style(body, $text-size-md, normal, 2.75, $text-color-secondary);
+      }
+
+      &__title {
+        @include text-style(title, $text-size-lg, bold, .5, $text-color-primary);
+
+      }
+
+      &__text {
+        @include text-style(body, $text-size-sm, normal, 2.5, $text-color-secondary);
+
+        &--link {
+          @include text-style(body, $text-size-sm, normal, 0, $text-color-secondary);
+          background: linear-gradient($left-to-right, $text-color-nightmare-primary, $text-color-nightmare-secondary);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          white-space: nowrap;
+          border-bottom: 1px solid $text-color-nightmare-secondary;
+
+          &:hover {
+            border-bottom: 1px solid $text-color-nightmare-primary;
+            text-decoration: none;
+          }
+        }
+
+        &__list{
+          text-align: left;
+        }
+
+        &--italics {
+          @include text-style(body, $text-size-sm, normal, 0, $text-color-secondary);
+          font-style: italic;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+

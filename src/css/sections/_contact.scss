@@ -1,0 +1,81 @@
+@import "../components/_variables.scss";
+@import "../components/_mixins.scss";
+@import "../components/_animations.scss";
+
+.contact {
+  //set component specific variables
+  //todo: can this really not be mixed in?
+  $text-color-primary: $text-color-nightmare-primary;
+  $text-color-secondary: $text-color-nightmare-secondary;
+  $background-color-light: $background-color-nightmare-light;
+  $background-color-dark: $background-color-nightmare-dark;
+  $light-or-dark-first: dark;
+
+  //todo: make it a mixin?
+  &__outer {
+    //@extend .projects;
+    @include section__outer-styling(other, $light-or-dark-first, $background-color-light, $background-color-dark);
+  }
+
+  &__inner {
+    @include section__inner-styling(left, $light-or-dark-first, $background-color-light, $background-color-dark);
+
+    &__content {
+      @include section__inside__content-styling;
+
+      &__hire {
+        @include text-style(body, $text-size-md, normal, 5, $text-color-secondary);
+        @media (min-width: $screen-desktop-wide) {
+          padding:{
+            bottom: 15rem;
+          }
+        }
+        &--link {
+          background: linear-gradient($left-to-right, $text-color-nightmare-primary, $text-color-nightmare-secondary);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          white-space: nowrap;
+          border-bottom: 1px solid $text-color-nightmare-secondary;
+
+          &:hover {
+            text-decoration: none;
+            border-bottom: 1px solid $text-color-nightmare-primary;
+          }
+        }
+      }
+
+      &__follow {
+        @include text-style(title, $text-size-md, normal, 1, $text-color-secondary);
+
+        &__text {
+          text: {
+            align: center;
+          }
+
+          &:hover {
+            text-decoration: none;
+          }
+
+          &--link {
+            //@include text-style(body, $text-size-md, normal, 0, $text-color-secondary);
+            background: linear-gradient($right-to-left, $text-color-nightmare-primary, $text-color-nightmare-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            white-space: nowrap;
+            border-bottom: 1px solid $text-color-nightmare-secondary;
+
+            &:hover {
+              border-bottom: 1px solid $text-color-nightmare-primary;
+              text-decoration: none;
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+}

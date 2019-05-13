@@ -1,0 +1,9 @@
+%header-theme {
+  $theme: serika;
+  @include section-theme($theme);
+}
+
+%activities-theme {
+  $theme: nautilus;
+  @include section-theme($theme)
+}
