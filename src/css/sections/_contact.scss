@@ -24,10 +24,14 @@
       @include section__inside__content-styling;
 
       &__hire {
-        @include text-style(body, $text-size-md, normal, 2.5, $text-color-secondary);
-
+        @include text-style(body, $text-size-md, normal, 5, $text-color-secondary);
+        @media (min-width: $screen-desktop-wide) {
+          padding:{
+            bottom: 15rem;
+          }
+        }
         &--link {
-          background: linear-gradient($right-to-left, $text-color-nightmare-primary, $text-color-nightmare-secondary);
+          background: linear-gradient($left-to-right, $text-color-nightmare-primary, $text-color-nightmare-secondary);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           white-space: nowrap;
@@ -41,7 +45,7 @@
       }
 
       &__follow {
-        @include text-style(title, $text-size-md, normal, .5, $text-color-secondary);
+        @include text-style(title, $text-size-md, normal, 1, $text-color-secondary);
 
         &__text {
           text: {

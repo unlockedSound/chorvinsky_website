@@ -23,7 +23,7 @@
       @include section__inside__content-styling;
 
       &__opener {
-        @include text-style(body, $text-size-md, normal, 1.25, $text-color-secondary);
+        @include text-style(body, $text-size-md, normal, 2.75, $text-color-secondary);
       }
 
       &__title {
@@ -36,7 +36,7 @@
 
         &--link {
           @include text-style(body, $text-size-sm, normal, 0, $text-color-secondary);
-          background: linear-gradient($right-to-left, $text-color-nightmare-primary, $text-color-nightmare-secondary);
+          background: linear-gradient($left-to-right, $text-color-nightmare-primary, $text-color-nightmare-secondary);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           white-space: nowrap;
@@ -46,12 +46,15 @@
             border-bottom: 1px solid $text-color-nightmare-primary;
             text-decoration: none;
           }
+        }
 
-          &--italics {
-            @include text-style(body, $text-size-sm, normal, 0, $text-color-secondary);
-            font-style: italic;
-          }
+        &__list{
+          text-align: left;
+        }
 
+        &--italics {
+          @include text-style(body, $text-size-sm, normal, 0, $text-color-secondary);
+          font-style: italic;
         }
 
       }
@@ -59,4 +62,6 @@
     }
 
   }
+
 }
+

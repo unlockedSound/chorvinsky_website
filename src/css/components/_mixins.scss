@@ -29,27 +29,35 @@
 
   } @else if $page-position == last {
     padding: {
-      top: 1.5rem;
-      bottom: 1.5rem;
+      top: 0rem;
+      bottom: 2rem;
     }
     //todo: add media queries
 
   } @else if $page-position == other {
     padding: {
-      top: 1.5rem;
-      bottom: 5rem;
+      top: 2rem;
+      bottom: 2rem;
     }
 
     @media (min-width: $screen-tablet) {
       padding: {
-        bottom: 7rem;
+        top: 2.5rem;
+        bottom: 2.5rem;
       }
     }
 
     @media (min-width: $screen-desktop) {
       padding: {
-        bottom: 9rem
+        top: 3rem;
+        bottom: 3rem;
       }
+    }
+    
+    @media (min-width: $screen-desktop-wide) {
+      padding: {
+        top: 4rem;
+        bottom: 4rem;}
     }
     //@warn "#{$page-position} input for page-position, default values presented."
   } @else {
@@ -85,6 +93,11 @@
   @include section-spacer($first-last-or-other);
   @include section-background(horizontal, $light-or-dark-first, $background-color-light, $background-color-dark);
   width: 100vw;
+  text-align: center;
+  @media (min-width: $screen-tablet) {
+    text-align: left;
+  }
+
 }
 
 @mixin section__inner-styling($diagonal-left-or-right, $light-or-dark-first, $background-color-light, $background-color-dark) {
@@ -102,18 +115,18 @@
     top: 2rem;
     bottom: 2rem;
   }
-  @media (min-width: $screen-tablet) {
-    padding: {
-      bottom: 5rem;
-      top: 5rem;
-    }
-  }
-  @media (min-width: $screen-desktop) {
-    padding: {
-      bottom: 5rem;
-      top: 5rem;
-    }
-  }
+  //@media (min-width: $screen-tablet) {
+  //  padding: {
+  //    bottom: 5rem;
+  //    top: 5rem;
+  //  }
+  //}
+  //@media (min-width: $screen-desktop) {
+  //  padding: {
+  //    bottom: 5rem;
+  //    top: 5rem;
+  //  }
+  //}
 }
 
 @mixin text-style($title-or-body, $size, $weight, $padding, $text-color) {
@@ -130,6 +143,11 @@
   }
   padding: {
     bottom: #{$padding}rem;
+  }
+  @media (min-width: $screen-desktop-wide) {
+    padding:{
+      bottom: calc(#{$padding}rem * 2);
+    }
   }
 }
 

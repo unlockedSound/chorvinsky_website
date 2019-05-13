@@ -2,8 +2,8 @@
 @import "../components/_mixins.scss";
 @import "../components/_animations.scss";
 
-
 .copy {
+  @include section-spacer(last);
   background: $background-color-nightmare-dark;
 
   &__text {
@@ -11,9 +11,6 @@
     margin: {
       left: auto;
       right: auto;
-    }
-    padding: {
-      bottom: 1rem;
     }
     text-align: center;
   }

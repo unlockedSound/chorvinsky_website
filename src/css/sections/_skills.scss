@@ -20,13 +20,18 @@
       @include section__inside__content-styling;
 
       &__opener {
-        @include text-style(body, $text-size-md, normal, 1.25, $text-color-secondary);
+        @include text-style(body, $text-size-md, normal, 2.75, $text-color-secondary);
       }
 
       &__project {
+        $padding: 3;
         padding: {
-          top: 1.5rem;
-          bottom: 1.5rem;
+          bottom: #{$padding}rem;
+        }
+        @media (min-width: $screen-desktop-wide) {
+          padding: {
+            bottom: calc(#{$padding}rem * 2);
+          }
         }
 
         &__title {
@@ -66,6 +71,7 @@
             left: 4rem;
           }
           margin: auto;
+          text-align: left;
           &__item {
             @include text-style(body, $text-size-sm, normal, 0, $text-color-secondary);
 

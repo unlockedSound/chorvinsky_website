@@ -19,7 +19,7 @@
       @include section__inside__content-styling;
 
       &__opener {
-        @include text-style(body, $text-size-md, normal, 1.25, $text-color-secondary);
+        @include text-style(body, $text-size-md, normal, 2.25, $text-color-secondary);
       //  todo: might need font-weight: normal;
       }
 
@@ -29,10 +29,17 @@
 
       &__text {
         @include text-style(body, $text-size-md, normal, 2.5, $text-color-secondary);
+        &:last-child{
+          padding-bottom: 55rem;
+        }
 
         &--reference {
           @include text-style(title, $text-size-sm, normal, 1, $text-color-primary);
           font-style: italic;
+          padding:{
+            top: 2rem;
+          }
+
         }
 
       }
