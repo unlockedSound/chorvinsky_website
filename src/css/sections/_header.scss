@@ -9,7 +9,7 @@
   $background-color-dark: $background-color-serika-dark;
   $light-or-dark-first: dark;
   &__outer {
-    @include section__outer-styling(first, $light-or-dark-first, $background-color-dark, $background-color-light);
+    @include section__outer-styling(first, $light-or-dark-first, $background-color-light, $background-color-dark);
   }
 
   &__inner {

@@ -25,4 +25,6 @@ yarn-error.log*
 #pycharm
 .idea*
 
-#
+#css (because I only want tot scss
+.css*
+.css.map*
