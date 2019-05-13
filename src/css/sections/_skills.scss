@@ -49,13 +49,13 @@
           }
 
           &--unlinked {
-            @include text-style(title, $text-size-lg, bold, .5, $text-color-primary);
+            @include text-style(title, $text-size-lg, bold, 0, $text-color-primary);
             background: none;
             color: $text-color-primary;
           }
 
           &--link {
-            @include text-style(title, $text-size-lg, bold, .5, $text-color-primary);
+            @include text-style(title, $text-size-lg, bold, 0, $text-color-primary);
             border-bottom: 1px solid $text-color-nightmare-secondary;
             -webkit-text-fill-color: transparent;
             &:hover {

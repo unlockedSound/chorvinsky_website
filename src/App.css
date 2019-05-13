@@ -455,26 +455,26 @@
   color: #64f9f9;
   font-size: 2.5rem;
   font-weight: bold;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0rem;
   background: none;
   color: #64f9f9;
 }
 @media (min-width: 1200px) {
   .skills__inner__content__project__title--unlinked {
-    padding-bottom: calc(0.5rem * 2);
+    padding-bottom: calc(0rem * 2);
   }
 }
 .skills__inner__content__project__title--link {
   color: #64f9f9;
   font-size: 2.5rem;
   font-weight: bold;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0rem;
   border-bottom: 1px solid #f8cf41;
   -webkit-text-fill-color: transparent;
 }
 @media (min-width: 1200px) {
   .skills__inner__content__project__title--link {
-    padding-bottom: calc(0.5rem * 2);
+    padding-bottom: calc(0rem * 2);
   }
 }
 .skills__inner__content__project__title--link:hover {
