@@ -1,4 +1,8 @@
 import React from "react";
+import ListComponent from "./components/list";
+
+const listItemText = ["They work: where they are and when they are", "Worth it: before you ever even dance", "Welcoming: we believe a hello is the right beginning", "Good: plain and simple"];
+
 
 const ProjectsSection = () => (
    <section className="projects">
@@ -30,20 +34,9 @@ const ProjectsSection = () => (
                                 in a DC appartment, to day long <span
                                 className="projects__inner__content__text--italics">minithons,</span> full on
                                 marathons, and festivals. We aim to create events that meet certain criteria:
-                                <ul className="projects__inner__content__text__list">
-                                    <li>
-                                        They work: where they are and when they are
-                                    </li>
-                                    <li>
-                                        Worth it: before you ever even dance
-                                    </li>
-                                    <li>
-                                        Welcoming: we believe a <span>hello</span> is the right beginning
-                                    </li>
-                                    <li>
-                                        Good: plain and simple
-                                    </li>
-                                </ul>
+
+                                <ListComponent />
+
                             </div>
 
                             <div className="projects__inner__content__title">

@@ -57,17 +57,10 @@
           }
 
           &--link {
-            //@include text-style(body, $text-size-md, normal, 0, $text-color-secondary);
             background: linear-gradient($right-to-left, $text-color-nightmare-primary, $text-color-nightmare-secondary);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             white-space: nowrap;
-            border-bottom: 1px solid $text-color-nightmare-secondary;
-
-            &:hover {
-              border-bottom: 1px solid $text-color-nightmare-primary;
-              text-decoration: none;
-            }
+            @include link-hover-styling;
 
           }
 

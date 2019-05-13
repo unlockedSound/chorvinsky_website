@@ -9,11 +9,11 @@
   @if $top-color == light {
     //background: $background-color-light;
     background: linear-gradient($line-direction, $background-color-light 52%, $background-color-dark 52%);
-  //@error "light";
+    //@error "light";
   } @else if $top-color == dark {
     //background: $background-color-light;
     background: linear-gradient($line-direction, $background-color-dark 52%, $background-color-light 52%);
-  //@error "dark";
+    //@error "dark";
   } @else {
     @error "argument #{$top-color} must be light or dark.";
   }
@@ -53,11 +53,12 @@
         bottom: 3rem;
       }
     }
-    
+
     @media (min-width: $screen-desktop-wide) {
       padding: {
         top: 4rem;
-        bottom: 4rem;}
+        bottom: 4rem;
+      }
     }
     //@warn "#{$page-position} input for page-position, default values presented."
   } @else {
@@ -92,7 +93,7 @@
 @mixin section__outer-styling($first-last-or-other, $light-or-dark-first, $background-color-light, $background-color-dark) {
   @include section-spacer($first-last-or-other);
   @include section-background(horizontal, $light-or-dark-first, $background-color-light, $background-color-dark);
-  width: 100vw;
+  width: 100%;
   text-align: center;
   @media (min-width: $screen-tablet) {
     text-align: left;
@@ -103,7 +104,7 @@
 @mixin section__inner-styling($diagonal-left-or-right, $light-or-dark-first, $background-color-light, $background-color-dark) {
   @include section-background($diagonal-left-or-right, $light-or-dark-first, $background-color-light, $background-color-dark);
   @include section__inside-height-control;
-  min-width: 100vw;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -145,7 +146,7 @@
     bottom: #{$padding}rem;
   }
   @media (min-width: $screen-desktop-wide) {
-    padding:{
+    padding: {
       bottom: calc(#{$padding}rem * 2);
     }
   }
@@ -173,6 +174,17 @@
       @include header-arrow-animation-settings($position)
     }
 
+  }
+
+}
+
+@mixin link-hover-styling {
+  border-bottom: 1px solid $text-color-nightmare-secondary;
+  -webkit-text-fill-color: transparent;
+
+  &:hover {
+    border-bottom: 1px solid $text-color-nightmare-primary;
+    text-decoration: none;
   }
 
 }

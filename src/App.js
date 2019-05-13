@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import './App.scss';
-import HeaderSection from './js/components/header.js'
-import ActivitiesSection from './js/components/activities.js'
-import ProjectsSection from './js/components/projects.js'
-import SkillsSection from './js/components/skills.js'
-import ContactSection from './js/components/contact.js'
-import CopyrightSection from './js/components/copyright'
+import HeaderSection from './js/header.js'
+import ActivitiesSection from './js/activities.js'
+import ProjectsSection from './js/projects.js'
+import SkillsSection from './js/skills.js'
+import ContactSection from './js/contact.js'
+import CopyrightSection from './js/copyright'
 
 // import {Parallax, ParallaxLayer} from 'react-spring/renderprops-addons'
 
