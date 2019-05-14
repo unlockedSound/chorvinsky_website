@@ -1,8 +1,8 @@
 import React from "react";
 import ListComponent from "./components/list";
 
-const listItemText = ["They work: where they are and when they are", "Worth it: before you ever even dance", "Welcoming: we believe a hello is the right beginning", "Good: plain and simple"];
-
+const listText = ["They work: where they are and when they are", "Worth it: before you ever even dance", "Welcoming: we believe a hello is the right beginning", "Good: plain and simple"];
+const listClass = "projects__inner__content__text__list";
 
 const ProjectsSection = () => (
    <section className="projects">
@@ -35,7 +35,10 @@ const ProjectsSection = () => (
                                 className="projects__inner__content__text--italics">minithons,</span> full on
                                 marathons, and festivals. We aim to create events that meet certain criteria:
 
-                                <ListComponent />
+                                <ListComponent
+                                    listText={listText}
+                                    listClass={listClass}
+                                />
 
                             </div>
 

@@ -61,15 +61,16 @@
         }
 
         &__list {
+          @include text-style(body, $text-size-sm, normal, 0, $text-color-secondary);
+
           padding: {
             left: 4rem;
           }
           margin: auto;
           text-align: left;
-          &__item {
-            @include text-style(body, $text-size-sm, normal, 0, $text-color-secondary);
 
-          }
+          //&__item {
+          //  @include text-style(body, $text-size-sm, normal, 0, $text-color-secondary);
 
         }
 
