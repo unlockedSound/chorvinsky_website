@@ -1,5 +1,5 @@
 @mixin header-arrow-animation-settings($delay) {
-  animation-name: color_change;
+  animation-name: color-shift-arrow--serika;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-duration: 3s;
@@ -15,8 +15,9 @@
   }
 
 }
-@mixin header-arrow-animation-keyframe{
-  @keyframes color_change {
+
+@mixin header-arrow-animation-keyframe {
+  @keyframes color-shift-arrow--serika {
     from {
       color: #1c1f25;
     }
@@ -26,5 +27,23 @@
   }
 
 }
+
+//todo: soften the hover transition slightly
+//@mixin link-hover-animation-settings {
+//  animation-name: color-shift-link--nautilus;
+//  animation-duration: 1s;
+//
+//}
+
+//@mixin link-color-animation-keyframe {
+//  @keyframes color-shift-link--nautilus {
+//    from {
+//      border-bottom: 1px solid $text-color-nightmare-secondary;
+//    }
+//    to {
+//      border-bottom: 1px solid $text-color-nightmare-primary;
+//    }
+//  }
+//}
 
 

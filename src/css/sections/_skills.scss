@@ -55,27 +55,22 @@
           }
 
           &--link {
-            @include text-style(title, $text-size-lg, bold, 0, $text-color-primary);
-            border-bottom: 1px solid $text-color-nightmare-secondary;
-            -webkit-text-fill-color: transparent;
-            &:hover {
-              border-bottom: 1px solid $text-color-nightmare-primary;
-              text-decoration: none;
-            }
+            @include link-hover-styling;
           }
 
         }
 
         &__list {
+          @include text-style(body, $text-size-sm, normal, 0, $text-color-secondary);
+
           padding: {
             left: 4rem;
           }
           margin: auto;
           text-align: left;
-          &__item {
-            @include text-style(body, $text-size-sm, normal, 0, $text-color-secondary);
 
-          }
+          //&__item {
+          //  @include text-style(body, $text-size-sm, normal, 0, $text-color-secondary);
 
         }
 
