@@ -1,0 +1,15 @@
+@import "css/components/_animations.scss";
+@import "css/components/_mixins.scss";
+@import "css/components/variables.scss";
+
+@import "css/sections/_header.scss";
+@import "css/sections/_activities.scss";
+@import "css/sections/_projects.scss";
+@import "css/sections/_skills.scss";
+@import "css/sections/_contact.scss";
+@import "css/sections/_copyright.css";
+
+.page {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+}

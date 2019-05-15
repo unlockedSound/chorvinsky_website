@@ -1,0 +1,49 @@
+@mixin header-arrow-animation-settings($delay) {
+  animation-name: color-shift-arrow--serika;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 3s;
+
+  @if $delay == top {
+    animation-delay: 0s;
+  } @else if $delay == middle {
+    animation-delay: 1s;
+  } @else if $delay == bottom {
+    animation-delay: 2s;
+  } @else {
+    @error "argument #{$delay} must be top, middle, bottom.";
+  }
+
+}
+
+@mixin header-arrow-animation-keyframe {
+  @keyframes color-shift-arrow--serika {
+    from {
+      color: #1c1f25;
+    }
+    to {
+      color: #ffcd01;
+    }
+  }
+
+}
+
+//todo: soften the hover transition slightly
+//@mixin link-hover-animation-settings {
+//  animation-name: color-shift-link--nautilus;
+//  animation-duration: 1s;
+//
+//}
+
+//@mixin link-color-animation-keyframe {
+//  @keyframes color-shift-link--nautilus {
+//    from {
+//      border-bottom: 1px solid $text-color-nightmare-secondary;
+//    }
+//    to {
+//      border-bottom: 1px solid $text-color-nightmare-primary;
+//    }
+//  }
+//}
+
+

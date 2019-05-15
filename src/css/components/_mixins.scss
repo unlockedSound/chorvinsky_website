@@ -1,0 +1,190 @@
+//individual style mixins
+//
+//
+
+@mixin section-background($background-direction, $top-color, $background-color-light, $background-color-dark) {
+  $direction: ("left": 155deg, "right": 205deg, "horizontal": 180deg);
+  //todo: set error to catch non-left, right, or horizontal cases
+  $line-direction: map-get($direction, $background-direction);
+  @if $top-color == light {
+    //background: $background-color-light;
+    background: linear-gradient($line-direction, $background-color-light 52%, $background-color-dark 52%);
+    //@error "light";
+  } @else if $top-color == dark {
+    //background: $background-color-light;
+    background: linear-gradient($line-direction, $background-color-dark 52%, $background-color-light 52%);
+    //@error "dark";
+  } @else {
+    @error "argument #{$top-color} must be light or dark.";
+  }
+}
+
+@mixin section-spacer($page-position) {
+  @if $page-position == first {
+    padding: {
+      top: 5rem;
+      bottom: 1.5rem;
+    }
+    //  todo: add media queries
+
+  } @else if $page-position == last {
+    padding: {
+      top: 0rem;
+      bottom: 2rem;
+    }
+    //todo: add media queries
+
+  } @else if $page-position == other {
+    padding: {
+      top: 2rem;
+      bottom: 2rem;
+    }
+
+    @media (min-width: $screen-tablet) {
+      padding: {
+        top: 2.5rem;
+        bottom: 2.5rem;
+      }
+    }
+
+    @media (min-width: $screen-desktop) {
+      padding: {
+        top: 3rem;
+        bottom: 3rem;
+      }
+    }
+
+    @media (min-width: $screen-desktop-wide) {
+      padding: {
+        top: 4rem;
+        bottom: 4rem;
+      }
+    }
+    //@warn "#{$page-position} input for page-position, default values presented."
+  } @else {
+    @error "argument #{$page-position} must be first, last, or other.";
+
+  }
+}
+
+@mixin section__inside-height-control {
+  //tan(deg)= vertical/width ==> min-height = tan(155 deg) * vw to guarantee diagonal reaches sides
+  //$tangent-of-diagonal: .47
+  //todo: convert to js function that inlines height by width
+  min-height: 548px;
+  @media (min-width: $screen-mobile-wide) {
+    min-height: 716px;
+  }
+  @media (min-width: $screen-tablet) {
+    min-height: 925px;
+  }
+  @media (min-width: $screen-desktop) {
+    min-height: 1044px;
+  }
+  @media (min-width: $screen-desktop-wide) {
+    min-height: 1400px;
+  }
+}
+
+//element styling mixins
+//
+//
+
+@mixin section__outer-styling($first-last-or-other, $light-or-dark-first, $background-color-light, $background-color-dark) {
+  @include section-spacer($first-last-or-other);
+  @include section-background(horizontal, $light-or-dark-first, $background-color-light, $background-color-dark);
+  width: 100%;
+  text-align: center;
+  @media (min-width: $screen-tablet) {
+    text-align: left;
+  }
+
+}
+
+@mixin section__inner-styling($diagonal-left-or-right, $light-or-dark-first, $background-color-light, $background-color-dark) {
+  @include section-background($diagonal-left-or-right, $light-or-dark-first, $background-color-light, $background-color-dark);
+  @include section__inside-height-control;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin section__inside__content-styling {
+  mix-blend-mode: hard-light;
+  padding: {
+    top: 2rem;
+    bottom: 2rem;
+  }
+  //@media (min-width: $screen-tablet) {
+  //  padding: {
+  //    bottom: 5rem;
+  //    top: 5rem;
+  //  }
+  //}
+  //@media (min-width: $screen-desktop) {
+  //  padding: {
+  //    bottom: 5rem;
+  //    top: 5rem;
+  //  }
+  //}
+}
+
+@mixin text-style($title-or-body, $size, $weight, $padding, $text-color) {
+  @if $title-or-body == title {
+    color: $text-color;
+  } @else if $title-or-body == body {
+    color: $text-color;
+  } @else {
+    @error "argument #{$title-or-body} must be title or body.";
+  }
+  font: {
+    size: $size;
+    weight: $weight;
+  }
+  padding: {
+    bottom: #{$padding}rem;
+  }
+  @media (min-width: $screen-desktop-wide) {
+    padding: {
+      bottom: calc(#{$padding}rem * 2);
+    }
+  }
+}
+
+@mixin arrow-styling {
+
+  $arrows: "top" "2.5" "30%" "1.5",
+  "middle" "1.5" "0" "1.25",
+  "bottom" "1" "0" "3";
+  @include header-arrow-animation-keyframe;
+  @each $position, $size, $margin-top, $margin-bottom in $arrows {
+    &__arrow--#{$position} {
+      color: #1c1f25;
+      text-align: center;
+      mix-blend-mode: multiply;
+      font-size: #{$size}rem;
+
+      margin: {
+        top: #{$margin-top};
+      }
+      padding: {
+        bottom: #{$margin-bottom}rem;
+      }
+      @include header-arrow-animation-settings($position)
+    }
+
+  }
+
+}
+
+@mixin link-hover-styling {
+  border-bottom: 1px solid $text-color-nightmare-secondary;
+  -webkit-text-fill-color: transparent;
+
+  &:hover {
+    border-bottom: 1px solid $text-color-nightmare-primary;
+    text-decoration: none;
+  }
+
+}
